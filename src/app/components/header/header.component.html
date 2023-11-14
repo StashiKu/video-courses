@@ -1,0 +1,81 @@
+<!-- <header id="header"> -->
+<header (scroll)="onscroll()" [ngClass]="navbarfixed ? 'fixed' : 'nofixed'">
+    <div class="logo">
+        <div class="logo__img">
+        <!-- inline svg -->
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+            >
+                <g clip-path="url(#clip0_79_2)">
+                <path
+                    d="M10 16.5L16 12L10 7.5V16.5ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                    fill="url(#paint0_linear_79_2)"
+                />
+                </g>
+                <defs>
+                <linearGradient
+                    id="paint0_linear_79_2"
+                    x1="12"
+                    y1="2"
+                    x2="12"
+                    y2="22"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stop-color="#10A8A8" />
+                    <stop offset="1" stop-color="#88FFA2" />
+                </linearGradient>
+                <clipPath id="clip0_79_2">
+                    <rect width="24" height="24" fill="white" />
+                </clipPath>
+                </defs>
+            </svg>
+            <!-- end of inline svg -->
+        </div>
+        <div class="logo__text">VIDEO COURSES</div>
+    </div>
+        <!-- navigation -->
+    <!-- <nav>
+        <ul>
+            <li>
+                <a routerLinkActive="active" routerLink="/gallery">Gallery</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" routerLink="/home" href="">Main</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" routerLink="/courses" href="">Tasks</a>
+            </li>
+        </ul>
+    </nav> -->
+   
+    <div class="actions">
+    <!-- <mat-slide-toggle
+              class="example-margin"
+              [checked]="false"
+              [disabled]="false"
+              (change)="onToggleChange($event)">
+              Slide me!
+          </mat-slide-toggle> -->
+        
+        <div class="switch-mode">
+            <div [ngClass]="{'is-flipped': mode == modes.dark}" class="modes" (click)="onToggleMode()">
+                <div class="modes__icon modes__icon--light">
+                    <span class="material-icons">light_mode</span>
+                </div>
+                <div class="modes__icon modes__icon--dark">
+                    <span class="material-icons">dark_mode</span>
+                </div>
+            </div>
+        </div>
+        <div class="login">
+            <span class="material-icons">perm_identity</span>
+        </div>
+        <div class="logoff">
+            <span class="material-icons">logout</span>
+        </div>
+    </div>
+</header>

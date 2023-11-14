@@ -1,0 +1,106 @@
+header {
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+svg.play_icon {
+    fill: white
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo__img {
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.actions > div {
+    margin: 10px;
+}
+
+.fixed {
+    position: fixed;
+    top: 0px;
+    transition: 1s linear;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 1s linear;
+    z-index: 1;
+}
+
+.nofixed {
+    position: static;
+    top: 0px;
+    transition: 1s linear;
+}
+
+nav > ul {
+    text-decoration: none;
+    display: flex;
+    list-style: none;
+
+    & > li {
+        margin: 0 10px;
+    }
+}
+
+.active {
+    color: greenyellow;
+}
+
+.modes {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
+}
+
+.modes.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.switch-mode {
+    perspective: 200px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.modes__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    background-color: rgb(123, 117, 119);
+}
+
+.modes__icon--light {
+    background-color: rgb(107, 158, 240);
+    color: rgb(242, 242, 30);
+    transform: rotateY(180deg);
+}
