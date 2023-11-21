@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "title": "Video Course 2. Name tag.",
+      "date": {
+        "time": "15:04:05",
+        "date": "Mon Sep 12 2022 00:00:00 GMT+0300 (Moscow Standard Time)"
+      },
+      "creationDate": "Mon Sep 12 2022 00:00:00 GMT+0300 (Moscow Standard Time)",
+      "description": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+      "id": "86424c6a-4efb-11ee-be56-0242ac120002"
+    },
+    {
+      "title": "Video Course 3. Name tag.",
+      "date": {
+        "time": "15:04:05",
+        "date": "Sat Dec 10 2022 00:00:00 GMT+0300 (Moscow Standard Time)"
+      },
+      "creationDate": "Sat Dec 10 2022 00:00:00 GMT+0300 (Moscow Standard Time)",
+      "description": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+      "id": "86425228-4efb-11ee-be56-0242ac120002"
+    },
+    {
+      "title": "Video Course 4. Name tag.",
+      "date": {
+        "time": "15:04:05",
+        "date": "Thu Nov 10 2022 00:00:00 GMT+0300 (Moscow Standard Time)"
+      },
+      "creationDate": "Thu Nov 10 2022 00:00:00 GMT+0300 (Moscow Standard Time)",
+      "description": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+      "id": "86425368-4efb-11ee-be56-0242ac120002"
+    },
+    {
+      "title": "Video Course 5. Name tag.",
+      "date": {
+        "time": "15:04:05",
+        "date": "Sun Nov 13 2022 00:00:00 GMT+0300 (Moscow Standard Time)"
+      },
+      "creationDate": "Sun Nov 13 2022 00:00:00 GMT+0300 (Moscow Standard Time)",
+      "description": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+      "id": "8642548a-4efb-11ee-be56-0242ac120002"
+    },
+    {
+      "title": "Video Course 6. Name tag.",
+      "date": {
+        "time": "15:04:05",
+        "date": "Mon Nov 14 2022 00:00:00 GMT+0300 (Moscow Standard Time)"
+      },
+      "creationDate": "Mon Nov 14 2022 00:00:00 GMT+0300 (Moscow Standard Time)",
+      "description": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+      "id": "864255ac-4efb-11ee-be56-0242ac120002"
+    },
+    {
+      "title": "Video Course 7. Name tag.",
+      "date": {
+        "time": "15:04:05",
+        "date": "Thu Nov 17 2022 00:00:00 GMT+0300 (Moscow Standard Time)"
+      },
+      "creationDate": "Thu Nov 17 2022 00:00:00 GMT+0300 (Moscow Standard Time)",
+      "description": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+      "id": "864256c4-4efb-11ee-be56-0242ac120002"
+    },
+    {
+      "title": "Video Course 8. Name tag.",
+      "date": {
+        "time": "15:04:05",
+        "date": "Tue Nov 15 2022 00:00:00 GMT+0300 (Moscow Standard Time)"
+      },
+      "creationDate": "Tue Nov 15 2022 00:00:00 GMT+0300 (Moscow Standard Time)",
+      "description": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+      "id": "864257d2-4efb-11ee-be56-0242ac120002"
+    },
+    {
+      "title": "Video Course 9. Name tag.",
+      "date": {
+        "time": "15:04:05",
+        "date": "Wed Nov 16 2022 00:00:00 GMT+0300 (Moscow Standard Time)"
+      },
+      "creationDate": "Wed Nov 16 2022 00:00:00 GMT+0300 (Moscow Standard Time)",
+      "description": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+      "id": "864258fe-4efb-11ee-be56-0242ac120002"
+    }
+  ]
+}
