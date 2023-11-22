@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, EventEmitter, HostListener, Inject, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Inject, Output, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +16,10 @@ export class HeaderComponent {
 
   @Output() readonly toggle: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(@Inject(DOCUMENT) document: Document) {}
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2  
+  ) {}
 
   ngOnInit() {}
 
@@ -30,7 +33,7 @@ export class HeaderComponent {
 
   onToggleMode = () => {
     this.mode = this.mode === 'light' ? this.modes.dark : this.modes.light;
-    console.log(this.mode, '<<<<<<<<')
-    this.toggle.emit();
+    const hostClass = this.mode === 'light' ? 'light-theme' : 'dark-theme';
+    this.renderer.setAttribute(this.document.body, 'class', hostClass);
   }
 }

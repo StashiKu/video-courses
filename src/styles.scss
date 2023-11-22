@@ -5,3 +5,12 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.dark-theme {
+    transition: all 1s ease 0s;
+    background: #211e1e;
+}
+
+.light-theme {
+    transition: all 1s ease 0s;
+}
