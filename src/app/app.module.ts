@@ -7,20 +7,21 @@ import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { httpInterceptorProviders } from './core/interceptors';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent
-  ],
+  declarations: [AppComponent, HeaderComponent, CategoriesComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    CommonModule,
     NgbModule,
+    HttpClientModule,
     BrowserAnimationsModule,
-    CommonModule
+    AppRoutingModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [httpInterceptorProviders],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

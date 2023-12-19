@@ -1,10 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-
+// @forward './assets/styles/';
+@use './assets/styles/' as colors;
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .dark-theme {
     transition: all 1s ease 0s;
