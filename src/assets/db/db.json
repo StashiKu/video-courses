@@ -1,4 +1,21 @@
 {
+  "categories": [
+    {
+      "title": "FrontEnd"
+    },
+    {
+      "title": "BackEnd"
+    },
+    {
+      "title": "Computer Science"
+    },
+    {
+      "title": "Data Bases"
+    },
+    {
+      "title": "Algorythms"
+    }
+  ],
   "items": [
     {
       "title": "Video Course 2. Name tag.",
