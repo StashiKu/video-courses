@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { Observable, catchError, of, retry, share, throwError } from 'rxjs';
+import { Observable, catchError, retry, share } from 'rxjs';
 import { Category } from '../types/category';
 import { CategoriesApi } from '../config/categories.config';
 import { HttpClient } from '@angular/common/http';

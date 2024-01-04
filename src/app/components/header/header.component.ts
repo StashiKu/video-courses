@@ -21,8 +21,6 @@ export class HeaderComponent {
     private renderer: Renderer2  
   ) {}
 
-  ngOnInit() {}
-
   @HostListener('window:scroll', ['$event']) onscroll() {
     if (window.scrollY > 50) {
       this.navbarfixed = true;

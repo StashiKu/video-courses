@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed} from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 import { By } from '@angular/platform-browser';
@@ -6,6 +6,7 @@ import { By } from '@angular/platform-browser';
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let headerElement: any;
 
   beforeEach(() => {

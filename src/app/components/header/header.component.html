@@ -37,32 +37,13 @@
         </div>
         <div class="logo__text">VIDEO COURSES</div>
     </div>
-        <!-- navigation -->
-    <!-- <nav>
-        <ul>
-            <li>
-                <a routerLinkActive="active" routerLink="/gallery">Gallery</a>
-            </li>
-            <li>
-                <a routerLinkActive="active" routerLink="/home" href="">Main</a>
-            </li>
-            <li>
-                <a routerLinkActive="active" routerLink="/courses" href="">Tasks</a>
-            </li>
-        </ul>
-    </nav> -->
    
-    <div class="actions">
-    <!-- <mat-slide-toggle
-              class="example-margin"
-              [checked]="false"
-              [disabled]="false"
-              (change)="onToggleChange($event)">
-              Slide me!
-          </mat-slide-toggle> -->
-        
+    <div class="actions">    
         <div class="switch-mode">
-            <div [ngClass]="{'is-flipped': mode == modes.dark}" class="modes" (click)="onToggleMode()">
+            <div [ngClass]="{'is-flipped': mode === modes.dark}"
+                class="modes"
+                (click)="onToggleMode()"
+            >
                 <div class="modes__icon modes__icon--light">
                     <span class="material-icons">light_mode</span>
                 </div>

@@ -6,7 +6,9 @@
     "start": "concurrently --kill-others \"ng serve -o --port 4200\" \"json-server --watch src/assets/db/db.json --port 4201\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint-style": "stylelint src/**/*.scss",
+    "lint": "ng lint --fix=true && npm run lint-style"
   },
   "private": true,
   "dependencies": {
@@ -29,17 +31,28 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.0.5",
+    "@angular-eslint/builder": "16.3.1",
+    "@angular-eslint/eslint-plugin": "16.3.1",
+    "@angular-eslint/eslint-plugin-template": "16.3.1",
+    "@angular-eslint/schematics": "16.3.1",
+    "@angular-eslint/template-parser": "16.3.1",
     "@angular/cli": "~16.0.5",
     "@angular/compiler-cli": "^16.0.0",
     "@angular/localize": "^16.0.0",
     "@types/jasmine": "~4.3.0",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
     "concurrently": "^8.2.2",
+    "eslint": "^8.51.0",
+    "husky": "^8.0.3",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0",
     "typescript": "~5.0.2"
   }
 }
