@@ -1,5 +1,6 @@
 import { throwError } from 'rxjs';
 
+// eslint-disable-next-line
 export function handleError(error: any) {
   console.log(error, 'error');
   if (error.status === 0) {
