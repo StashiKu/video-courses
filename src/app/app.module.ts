@@ -10,9 +10,10 @@ import { CommonModule } from '@angular/common';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { httpInterceptorProviders } from './core/interceptors';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, CategoriesComponent],
+  declarations: [AppComponent, HeaderComponent, CategoriesComponent, CategoryComponent],
   imports: [
     BrowserModule,
     CommonModule,

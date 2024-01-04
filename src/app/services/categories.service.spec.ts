@@ -1,19 +1,90 @@
-import { TestBed } from '@angular/core/testing';
-
 import { CategoriesService } from './categories.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { asyncData, asyncError } from '../testing/helpers/async-observable-helpers';
+import { categoriesMock } from '../testing/data/categories.mock';
+import { Category } from '../types/category';
 
 describe('CategoriesService', () => {
-  let service: CategoriesService;
+  let httpClientSpy: jasmine.SpyObj<HttpClient>;
+  let categoriesService: CategoriesService;
+  let categoriesUrlStub: string;
+
+  const errorResponse404 = new HttpErrorResponse({
+    error: 'test 404 error',
+    status: 404,
+    statusText: 'Not Found',
+  });
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-    });
-    service = TestBed.inject(CategoriesService);
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    categoriesUrlStub = 'test/url';
+    categoriesService = new CategoriesService(httpClientSpy, categoriesUrlStub);
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(categoriesService).toBeTruthy();
+  });
+
+  it('should return correct category [getCategory]', (done: DoneFn) => {
+    const expectedCategoryKey = categoriesMock[0].key; 
+    httpClientSpy.get.and.returnValue(asyncData(categoriesMock));
+
+    categoriesService.getCategory(expectedCategoryKey)
+      .subscribe({
+        next: (category: Category | null) => {
+          expect(category?.key)
+            .withContext('expected category')
+            .toEqual(expectedCategoryKey);
+          done();
+        },
+        error: done.fail
+      })
+  });
+
+  it('should return an error when the server returns a 404 [getCategory]', (done: DoneFn) => {
+    httpClientSpy.get.and.returnValue(asyncError(errorResponse404));
+
+    categoriesService.getCategory('')
+      .subscribe({
+        next: () => done.fail(),
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        error: (error: any) => {
+          expect(error.error)
+          .withContext('expected error (getCategory)')
+          .toContain('test 404 error');
+          done();
+        }
+      })
+  });
+
+  it('should return list of categories [getCategories]', (done: DoneFn) => {
+    httpClientSpy.get.and.returnValue(asyncData(categoriesMock));
+
+    categoriesService.getCategories()
+    .subscribe({
+      next: (categories: Category[]) => {
+        expect(categories)
+          .withContext('expected list of categories')
+          .toEqual(categoriesMock);
+        done();
+      },
+      error: done.fail
+    });
+  });
+
+  it('should return an error when the server returns a 404 [getCategories]', (done: DoneFn) => {
+    httpClientSpy.get.and.returnValue(asyncError(errorResponse404));
+
+    categoriesService.getCategories()
+      .subscribe({
+        next: () => done.fail(),
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        error: (error: any) => {
+          expect(error.error)
+          .withContext('expected error (getCategories)')
+          .toContain('test 404 error');
+          done();
+        }
+      });
   });
 });
