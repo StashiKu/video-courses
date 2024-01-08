@@ -2,7 +2,7 @@ import { throwError } from 'rxjs';
 
 // eslint-disable-next-line
 export function handleError(error: any) {
-  console.log(error, 'error');
+  // console.log(error, 'error');
   if (error.status === 0) {
     console.error('An error occured', error);
   } else {
@@ -12,5 +12,5 @@ export function handleError(error: any) {
     );
   }
 
-  return throwError(() => new Error('Something bad happened; please try'));
+  return throwError(() => error);
 }

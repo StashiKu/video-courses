@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, mapToResolve } from '@angular/router';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { CategoryComponent } from './components/category/category.component';
+import { ResolveGuard } from './guards/resolve-guard.service';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: CategoriesComponent,
@@ -11,6 +13,13 @@ const routes: Routes = [
     path: 'main',
     component: CategoriesComponent,
   },
+  {
+    path: 'categories/:categoryKey',
+    resolve: {
+      category: mapToResolve(ResolveGuard)
+    },
+    component: CategoryComponent
+  }
 ];
 
 @NgModule({

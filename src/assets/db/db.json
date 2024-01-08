@@ -1,19 +1,24 @@
 {
   "categories": [
     {
-      "title": "FrontEnd"
+      "title": "FrontEnd",
+      "key": "front-end"
     },
     {
-      "title": "BackEnd"
+      "title": "BackEnd",
+      "key": "back-end"
     },
     {
-      "title": "Computer Science"
+      "title": "Computer Science",
+      "key": "computer-science"
     },
     {
-      "title": "Data Bases"
+      "title": "Data Bases",
+      "key": "data-bases"
     },
     {
-      "title": "Algorythms"
+      "title": "Algorythms",
+      "key": "algorythms"
     }
   ],
   "items": [
