@@ -29,9 +29,19 @@ export class HeaderComponent {
     }
   }
 
-  onToggleMode = () => {
+  switchTheme = () => {
     this.mode = this.mode === 'light' ? this.modes.dark : this.modes.light;
     const hostClass = this.mode === 'light' ? 'light-theme' : 'dark-theme';
     this.renderer.setAttribute(this.document.body, 'class', hostClass);
+  }
+
+  onToggleModeClick = () => {
+    this.switchTheme();
+  }
+
+  onToggleModeKeyup = (event: KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      this.switchTheme();
+    }
   }
 }

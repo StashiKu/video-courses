@@ -5,11 +5,13 @@ import { CategoryComponent } from './category.component';
 import { Category } from 'src/app/types/category';
 import { categoriesMock } from 'src/app/testing/data/categories.mock';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CategoryComponent', () => {
   let component: CategoryComponent;
   let fixture: ComponentFixture<CategoryComponent>;
   let mockActivatedRoute: Partial<ActivatedRoute>;
+  let router: Router;
   const mockedCategory: Category = categoriesMock[0];
 
   beforeEach(() => {
@@ -18,6 +20,7 @@ describe('CategoryComponent', () => {
     };
 
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [CategoryComponent],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
@@ -26,6 +29,7 @@ describe('CategoryComponent', () => {
   });
 
   beforeEach(() => {
+    router = TestBed.inject(Router);
     fixture = TestBed.createComponent(CategoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -45,11 +49,17 @@ describe('CategoryComponent', () => {
     expect(titleElement.textContent).toEqual(mockedCategory.title);
   });
 
-  xit('should navigate to main page when `go back` btn is clicked', () => {
+  it('should navigate to main page when `go back` btn is clicked', () => {
+    const navigateSpy = spyOn(router, 'navigate');
     const goBackBtn = fixture.debugElement.query(By.css('.btn--go-back'));
     
     goBackBtn.triggerEventHandler('click');
 
-    expect(TestBed.inject(Router).url).toEqual('/main');
+    expect(navigateSpy).toHaveBeenCalledWith(['/main']);
+  });
+
+  it('should be `Go Back` text for btn', () => {
+    const goBackBtn = fixture.nativeElement.querySelector('.btn--go-back');
+    expect(goBackBtn.textContent).toEqual('Go Back');
   });
 });

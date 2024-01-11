@@ -2,7 +2,10 @@
   <div class="categories__list">
     <div *ngFor="let cat of categories"
       class="categories__item"
-      (click)="onClick(cat.key)">
+      (click)="onClick(cat.key)"
+      (keyup)="onKeyup($event, cat.key)"
+      tabindex="0"
+    >
       <span class="categories__item-name">{{ cat.title }}</span>
     </div>
   </div>

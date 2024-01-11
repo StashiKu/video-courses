@@ -87,6 +87,10 @@ nav > ul {
     overflow: hidden;
 }
 
+.switch-mode:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
 .modes__icon {
     display: flex;
     justify-content: center;

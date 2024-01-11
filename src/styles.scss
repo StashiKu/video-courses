@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-// @forward './assets/styles/';
-@use './assets/styles/' as colors;
-/* Importing Bootstrap SCSS file. */
+@use './assets/styles/' as styles;
 @import 'bootstrap/scss/bootstrap';
+// @import 'src/assets/styles/_index.scss';
 
 html,
 body {
@@ -21,5 +20,5 @@ body {
 
 .light-theme {
     transition: all 1s ease 0s;
-    background-color: colors.$greyLight-1;
+    background-color: styles.$greyLight-1;
 }
