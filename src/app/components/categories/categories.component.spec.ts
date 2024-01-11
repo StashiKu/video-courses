@@ -15,12 +15,20 @@ describe('CategoriesComponent', () => {
   let component: CategoriesComponent;
   let fixture: ComponentFixture<CategoriesComponent>;
   let harness: RouterTestingHarness;
+  let router: Router;
+  let categoryDe: DebugElement;
 
   const getCategoriesResponseMock: Category[] = categoriesMock;
 
   function onCategoryClick(target: DebugElement) {
     fixture.ngZone?.run(() => {
       target.triggerEventHandler('click');
+    });
+  }
+
+  function onCategoryKeyup(target: DebugElement, key: string) {
+    fixture.ngZone?.run(() => {
+      target.triggerEventHandler('keyup', { key });
     });
   }
 
@@ -60,6 +68,7 @@ describe('CategoriesComponent', () => {
   });
 
   beforeEach(() => {
+    router = TestBed.inject(Router);
     fixture = TestBed.createComponent(CategoriesComponent);
     component = fixture.componentInstance;
     categoriesServiceSpy.getCategories.and.returnValue(of(getCategoriesResponseMock));
@@ -67,8 +76,8 @@ describe('CategoriesComponent', () => {
   });
 
   beforeEach(fakeAsync(() => {
-    const categoryDe = fixture.debugElement.query(By.css('.categories__item'));
-    onCategoryClick(categoryDe)
+    categoryDe = fixture.debugElement.query(By.css('.categories__item'));
+    onCategoryClick(categoryDe);
   }));
 
   it('should create', () => {
@@ -95,7 +104,6 @@ describe('CategoriesComponent', () => {
 
   it('should navigate to a correct page after single category is clicked', fakeAsync(() => {
     const onClickSpy = spyOn(component, 'onClick');
-    const categoryDe = fixture.debugElement.query(By.css('.categories__item'));
     const expectedCategory: Category|undefined = findCategory(categoryDe.nativeElement.textContent);
     const expectedCategoryKey = expectedCategory?.key;
     
@@ -106,4 +114,29 @@ describe('CategoriesComponent', () => {
     expect(onClickSpy).toHaveBeenCalledWith(expectedCategoryKey);
     expect(TestBed.inject(Router).url).toEqual(`/categories/${expectedCategoryKey}`);
   }));
+
+  it('should navigate to a category page when single category is focused and `enter` key is pushed', fakeAsync(() => {
+    const enterKey = 'Enter';
+    
+    const keyboardEvent = {key: enterKey} as KeyboardEvent;
+    const onKeyupSpy = spyOn(component, 'onKeyup');
+    const expectedCategory: Category|undefined = findCategory(categoryDe.nativeElement.textContent);
+    const expectedCategoryKey = expectedCategory?.key;
+
+    onCategoryKeyup(categoryDe, enterKey);
+
+    expect(onKeyupSpy.calls.count()).toBe(1, '`onClick` called once');
+    expect(expectedCategoryKey).not.toBeUndefined();
+    expect(onKeyupSpy).toHaveBeenCalledWith(keyboardEvent, expectedCategoryKey);
+    expect(TestBed.inject(Router).url).toEqual(`/categories/${expectedCategoryKey}`);
+  }));
+
+  it('should not navigate to a category page if another key (not enter) was pushed', () => {
+    const navigateSpy = spyOn(router, 'navigate');
+
+    const randomKey = 'Tab';
+    onCategoryKeyup(categoryDe, randomKey);
+
+    expect(navigateSpy).toHaveBeenCalledTimes(0);
+  })
 });

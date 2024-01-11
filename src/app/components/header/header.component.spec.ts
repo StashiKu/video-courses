@@ -41,7 +41,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should change class for body tag when switching the theme', () => {
-    const iconDe = fixture.debugElement.query(By.css('.modes'));
+    const iconDe = fixture.debugElement.query(By.css('.switch-mode'));
     const document = fixture.nativeElement.ownerDocument;
     const bodyWithLightThemeClass = document.querySelector('body');
     expect(bodyWithLightThemeClass.classList.contains('dark-theme')).toBeFalse();

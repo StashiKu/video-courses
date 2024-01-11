@@ -23,7 +23,17 @@ export class CategoriesComponent implements OnInit {
       });
   }
 
-  public onClick(categoryKey: string): void {
+  public navigateToCategory(categoryKey: string): void {
     this.router.navigate([`/categories/${categoryKey}`]);
+  }
+
+  public onClick(categoryKey: string): void {
+    this.navigateToCategory(categoryKey);
+  }
+  
+  public onKeyup(event: KeyboardEvent, categoryKey: string): void {
+    if (event.key === 'Enter') {
+      this.navigateToCategory(categoryKey);
+    }
   }
 }

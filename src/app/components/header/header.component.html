@@ -37,12 +37,13 @@
         <div class="logo__text">VIDEO COURSES</div>
     </div>
    
-    <div class="actions">    
-        <div class="switch-mode">
-            <div [ngClass]="{'is-flipped': mode === modes.dark}"
-                class="modes"
-                (click)="onToggleMode()"
-            >
+    <div class="actions">
+        <!-- theme mode swithcher -->
+        <div class="switch-mode"
+            (click)="onToggleModeClick()"
+            (keyup)="onToggleModeKeyup($event)"
+            tabindex="0">
+            <div [ngClass]="{'is-flipped': mode === modes.dark}" class="modes">
                 <div class="modes__icon modes__icon--light">
                     <span class="material-icons">light_mode</span>
                 </div>
@@ -51,10 +52,12 @@
                 </div>
             </div>
         </div>
-        <div class="login">
+        <!-- login icon -->
+        <div class="login" tabindex="0">
             <span class="material-icons">perm_identity</span>
         </div>
-        <div class="logoff">
+        <!-- logout icon -->
+        <div class="logoff" tabindex="0">
             <span class="material-icons">logout</span>
         </div>
     </div>

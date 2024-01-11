@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from 'src/app/types/category';
 
 @Component({
@@ -10,7 +10,9 @@ import { Category } from 'src/app/types/category';
 export class CategoryComponent implements OnInit {
   public category!: Category;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.route.data.subscribe(({ category }) => {
@@ -18,4 +20,8 @@ export class CategoryComponent implements OnInit {
       this.category = category;
     });
   }
+
+  goBack(): void {
+    this.router.navigate(['/main']);
+  }  
 }
