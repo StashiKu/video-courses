@@ -1,0 +1,102 @@
+<div class="video-player">
+    <div
+        class="video-player__container"
+        (mouseover)="showControllers(true)"
+        (mouseout)="showControllers(false)"
+        (focus)="showControllers(true)"
+        (blur)="showControllers(false)"    
+    >
+        <video
+            id="video"
+            #video
+            preload="metadata"
+            (timeupdate)="onVideoTimeUpdate(video, progressBar, currentTime, maxDuration)"
+        >
+            <source src="">
+
+        </video>
+        <div
+            class="controls-wrapper"
+            [ngClass]="{'controls--visible': showControls}"
+        >
+            <div class="controls__playback-line">
+                <div class="controls__progress-bar" #progressBar></div>
+            </div>
+            <div class="controls">
+                <!-- Left controller div -->
+                <div class="controls__major">
+                    <span
+                        class="controls__major-pause"
+                        id="pause"
+                        *ngIf="!video.paused"
+                        (click)="video.pause()"
+                        (keyup)="onKeyupPlayPause($event, video)"
+                        tabindex="0"
+                    >
+                        <i class="bi bi-pause-fill"></i>
+                    </span>
+                    <span
+                        class="controls__major-play"
+                        id="play"
+                        *ngIf="video.paused"
+                        (click)="video.play()"
+                        (keyup)="$event.key === 'Enter' ? video.play() : null"
+                        tabindex="0"
+                    >
+                        <i class="bi bi-play-fill"></i>
+                    </span>
+                    <span class="controls__major-skip" id="next">
+                        <i class="bi bi-skip-end-fill"></i>
+                    </span>
+                    <!-- mute controllers -->
+                    <span
+                        *ngIf="!video.muted"
+                        class="controls__major-mute"
+                        id="mute"
+                        tabindex="0"
+                        (click)="onClickMute(video, range)"
+                        (keyup)="onKeyupMute($event, video, range)"
+                    >
+                        <i class="bi bi-volume-up-fill"></i>
+                    </span>
+                    <span
+                        *ngIf="video.muted"
+                        class="controls__major-unmute"
+                        id="unmute"
+                        tabindex="0"
+                        (click)="onClickMute(video, range)"
+                        (keyup)="onKeyupMute($event, video, range)"
+                    >
+                        <i class="bi bi-volume-mute-fill"></i>
+                    </span>
+                    <input
+                        (input)="onRange($event, range, video)"
+                        class="controls__major-range"
+                        #range
+                        type="range"
+                        id="volume"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="1"
+                    >
+                    <!-- timer -->
+                    <span class="controls__major-timer">
+                        <span id="current-time" #currentTime>00:00</span>
+                        <span id="separator">/</span>
+                        <span id="max-duration" #maxDuration>00:00</span>
+                    </span>
+                </div>
+                <!-- settings controllers -->
+                <div class="controls__settings">
+                    <span class="controls__settings-arrows">
+                        <i class="bi bi-gear-fill"></i>
+                    </span>
+                    <span class="controls__settings-gear">
+                        <i class="bi bi-fullscreen"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

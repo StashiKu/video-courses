@@ -1,0 +1,75 @@
+.controls-wrapper {
+    position: absolute; 
+    bottom: 0px; 
+    left: 0; 
+    right: 0;  
+    background-color: rgba( 
+        0, 
+        0, 
+        0, 
+        0.7
+    );
+    display: flex;
+    flex-direction: column;
+    padding: 10px; 
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out; 
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+video {
+    width: 100%;
+}
+
+.video-player__container {
+    width: 60%;
+    position: relative;
+    background-color: black;
+    margin-bottom: 10px;;
+}
+
+.controls__settings-arrows {
+    margin-right: 10px;
+}
+
+.controls--visible {
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls__playback-line { 
+    background-color: #ddd; 
+    width: 100%; 
+    cursor: pointer;
+    margin-bottom: 10px;
+} 
+  
+.controls__progress-bar { 
+    height: 4px;
+    width: 0; 
+    background-color: #0078d4; 
+    transition: width 0.1s linear; 
+}
+
+.controls__major {
+    display: flex;
+    align-items: center;
+}
+
+.controls__major-timer {
+    display: flex; 
+    align-items: center;
+    color: #efefef; 
+    margin-left: 15px; 
+    font-size: 12px; 
+}
+
+span > i {
+    font-size: 25px;
+    color: #cecece;
+}
