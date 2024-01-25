@@ -11,9 +11,10 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { httpInterceptorProviders } from './core/interceptors';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryComponent } from './components/category/category.component';
+import { VideoPlayerComponent } from './components/video-player/video-player.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, CategoriesComponent, CategoryComponent],
+  declarations: [AppComponent, HeaderComponent, CategoriesComponent, CategoryComponent, VideoPlayerComponent],
   imports: [
     BrowserModule,
     CommonModule,

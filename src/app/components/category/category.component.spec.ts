@@ -6,6 +6,7 @@ import { Category } from 'src/app/types/category';
 import { categoriesMock } from 'src/app/testing/data/categories.mock';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
+import { VideoPlayerComponent } from '../video-player/video-player.component';
 
 describe('CategoryComponent', () => {
   let component: CategoryComponent;
@@ -21,7 +22,7 @@ describe('CategoryComponent', () => {
 
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [CategoryComponent],
+      declarations: [CategoryComponent, VideoPlayerComponent],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
       ]

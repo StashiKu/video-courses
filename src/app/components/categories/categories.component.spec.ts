@@ -102,6 +102,11 @@ describe('CategoriesComponent', () => {
     });
   }));
 
+  // TODO
+  it('should render correct number of categories', () => {
+    // code here or include it to test case above
+  });
+
   it('should navigate to a correct page after single category is clicked', fakeAsync(() => {
     const onClickSpy = spyOn(component, 'onClick');
     const expectedCategory: Category|undefined = findCategory(categoryDe.nativeElement.textContent);
@@ -112,7 +117,7 @@ describe('CategoriesComponent', () => {
     expect(onClickSpy.calls.count()).toBe(1, '`onClick` called once');
     expect(expectedCategoryKey).not.toBeUndefined();
     expect(onClickSpy).toHaveBeenCalledWith(expectedCategoryKey);
-    expect(TestBed.inject(Router).url).toEqual(`/categories/${expectedCategoryKey}`);
+    expect(router.url).toEqual(`/categories/${expectedCategoryKey}`);
   }));
 
   it('should navigate to a category page when single category is focused and `enter` key is pushed', fakeAsync(() => {
@@ -128,7 +133,7 @@ describe('CategoriesComponent', () => {
     expect(onKeyupSpy.calls.count()).toBe(1, '`onClick` called once');
     expect(expectedCategoryKey).not.toBeUndefined();
     expect(onKeyupSpy).toHaveBeenCalledWith(keyboardEvent, expectedCategoryKey);
-    expect(TestBed.inject(Router).url).toEqual(`/categories/${expectedCategoryKey}`);
+    expect(router.url).toEqual(`/categories/${expectedCategoryKey}`);
   }));
 
   it('should not navigate to a category page if another key (not enter) was pushed', () => {
@@ -138,5 +143,5 @@ describe('CategoriesComponent', () => {
     onCategoryKeyup(categoryDe, randomKey);
 
     expect(navigateSpy).toHaveBeenCalledTimes(0);
-  })
+  });
 });

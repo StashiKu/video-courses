@@ -18,7 +18,7 @@ export class HeaderComponent {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2  
+    private renderer: Renderer2
   ) {}
 
   @HostListener('window:scroll', ['$event']) onscroll() {

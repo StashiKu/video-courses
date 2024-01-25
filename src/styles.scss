@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @use './assets/styles/' as styles;
 @import 'bootstrap/scss/bootstrap';
-// @import 'src/assets/styles/_index.scss';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+* { 
+    margin: 0; 
+    padding: 0; 
+} 
 
 html,
 body {
