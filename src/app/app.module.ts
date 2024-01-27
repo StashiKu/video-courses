@@ -12,9 +12,10 @@ import { httpInterceptorProviders } from './core/interceptors';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryComponent } from './components/category/category.component';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, CategoriesComponent, CategoryComponent, VideoPlayerComponent],
+  declarations: [AppComponent, HeaderComponent, CategoriesComponent, CategoryComponent, VideoPlayerComponent, FooterComponent],
   imports: [
     BrowserModule,
     CommonModule,
