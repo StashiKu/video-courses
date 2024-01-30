@@ -5,7 +5,7 @@ import { asyncData } from '../testing/helpers/async-observable-helpers';
 import { getVideosByCategoryTest } from '../testing/data/videos.mock';
 import { VideoCategory } from '../types/video';
 
-fdescribe('VideosService', () => {
+describe('VideosService', () => {
   let videoService: VideosService;
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
   let videosUrlStub: string;
