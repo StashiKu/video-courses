@@ -1,3 +1,12 @@
+.category {
+    display: flex;
+    justify-content: space-between;
+}
+
 .category__title {
     padding: 20px 0;
+}
+
+.category__player-wrapper {
+    flex: 1;
 }

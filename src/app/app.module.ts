@@ -13,9 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoryComponent } from './components/category/category.component';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { VideoSidePanelComponent } from './components/video-side-panel/video-side-panel.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, CategoriesComponent, CategoryComponent, VideoPlayerComponent, FooterComponent],
+  declarations: [AppComponent, HeaderComponent, CategoriesComponent, CategoryComponent, VideoPlayerComponent, FooterComponent, VideoSidePanelComponent],
   imports: [
     BrowserModule,
     CommonModule,

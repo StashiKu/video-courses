@@ -1,19 +1,14 @@
 import { CategoriesService } from './categories.service';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { asyncData, asyncError } from '../testing/helpers/async-observable-helpers';
 import { categoriesMock } from '../testing/data/categories.mock';
 import { Category } from '../types/category';
+import { errorResponse404 } from '../testing/helpers/http-test-responses';
 
 describe('CategoriesService', () => {
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
   let categoriesService: CategoriesService;
   let categoriesUrlStub: string;
-
-  const errorResponse404 = new HttpErrorResponse({
-    error: 'test 404 error',
-    status: 404,
-    statusText: 'Not Found',
-  });
 
   beforeEach(() => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
@@ -26,7 +21,7 @@ describe('CategoriesService', () => {
   });
 
   it('should return correct category [getCategory]', (done: DoneFn) => {
-    const expectedCategoryKey = categoriesMock[0].key; 
+    const expectedCategoryKey = categoriesMock[0].key;
     httpClientSpy.get.and.returnValue(asyncData(categoriesMock));
 
     categoriesService.getCategory(expectedCategoryKey)

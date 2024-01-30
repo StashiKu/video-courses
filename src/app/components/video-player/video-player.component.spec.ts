@@ -10,7 +10,7 @@ describe('VideoPlayerComponent', () => {
   let component: VideoPlayerComponent;
   let fixture: ComponentFixture<VideoPlayerComponent>;
   let debugElement: DebugElement;
-
+   /* eslint-disable */
   const getElement = (
     elem: DebugElement | any,
     selector: string,
@@ -22,13 +22,12 @@ describe('VideoPlayerComponent', () => {
     ]);
 
     const queryMethods = queryDic.get(isCollection);
-    /* eslint-disable */
+   
     if (elem instanceof DebugElement) {
       return queryMethods!.debugEl(By.css(selector));
     }
 
     return queryMethods!.nativeEl(selector);
-    /* eslint-enable */
   };
 
   const testTemplateElDic = {
@@ -74,12 +73,13 @@ describe('VideoPlayerComponent', () => {
       },
     } as { [key: string]: { [key: string]: any } },
   };
-
+ 
   const getSelector = (data: { [key: string]: string }): string => {
     const { class: cssClass, additionalSelector } = data;
 
     return `${cssClass}`;
   };
+  /* eslint-enable */
 
   beforeEach(() => {
     TestBed.configureTestingModule({

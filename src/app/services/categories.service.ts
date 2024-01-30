@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { Observable, catchError, map, retry, share } from 'rxjs';
 import { Category } from '../types/category';
-import { CategoriesApi } from '../config/categories.config';
+import { CategoriesApi } from '../config/app.config';
 import { HttpClient } from '@angular/common/http';
 import { handleError } from '../shared/error-handler';
 
