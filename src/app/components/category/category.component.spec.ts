@@ -7,6 +7,8 @@ import { categoriesMock } from 'src/app/testing/data/categories.mock';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { VideoPlayerComponent } from '../video-player/video-player.component';
+import { VideoSidePanelComponent } from '../video-side-panel/video-side-panel.component';
+import { VideosService } from 'src/app/services/videos.service';
 
 describe('CategoryComponent', () => {
   let component: CategoryComponent;
@@ -14,6 +16,8 @@ describe('CategoryComponent', () => {
   let mockActivatedRoute: Partial<ActivatedRoute>;
   let router: Router;
   const mockedCategory: Category = categoriesMock[0];
+  const videoServiceSpy = jasmine.createSpyObj('VideosService', ['getVideosByCategory']);
+  videoServiceSpy.getVideosByCategory.and.returnValue(of([]));
 
   beforeEach(() => {
     mockActivatedRoute = {
@@ -22,9 +26,10 @@ describe('CategoryComponent', () => {
 
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [CategoryComponent, VideoPlayerComponent],
+      declarations: [CategoryComponent, VideoPlayerComponent, VideoSidePanelComponent],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
+        { provide: VideosService, useValue: videoServiceSpy }
       ]
     }).compileComponents();
   });
