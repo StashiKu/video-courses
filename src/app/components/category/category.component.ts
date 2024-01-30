@@ -16,7 +16,6 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(({ category }) => {
-      console.log(category, '!!!!')
       this.category = category;
     });
   }

@@ -102,5 +102,65 @@
       "description": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
       "id": "864258fe-4efb-11ee-be56-0242ac120002"
     }
+  ],
+  "videos": [
+    {
+      "categoryKey": "front-end",
+      "videos": [
+        {
+          "title": "Learn the basics of HTML",
+          "lector": "John Doe"
+        },
+        {
+          "title": "Learn the basics of CSS",
+          "lector": "John Doe"
+        },
+        {
+          "title": "Module Bundlers: Vite",
+          "lector": "John Doe"
+        },
+        {
+          "title": "Web Security Basics",
+          "lector": "John Doe"
+        },
+        {
+          "title": "Web APIs",
+          "lector": "John Doe"
+        },
+        {
+          "title": "Static Site Generators",
+          "lector": "John Doe"
+        }
+      ]
+    },
+    {
+      "categoryKey": "back-end",
+      "videos": [
+        {
+          "title": "Relational Databases",
+          "lector": "John Doe"
+        },
+        {
+          "title": "Learn about APIs",
+          "lector": "John Doe"
+        },
+        {
+          "title": "Caching",
+          "lector": "John Doe"
+        },
+        {
+          "title": "Web Security Knowledge",
+          "lector": "John Doe"
+        },
+        {
+          "title": "Web Servers",
+          "lector": "John Doe"
+        },
+        {
+          "title": "Software Design and Architecture",
+          "lector": "John Doe"
+        }
+      ]
+    }
   ]
 }

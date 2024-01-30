@@ -1,0 +1,20 @@
+<div class="video-side-panel">
+  <div class="video-side-panel__list">
+    <div class="video-side-panel__item"
+        *ngFor="let el of videosData"
+    >
+        <div class="video-side-panel__item-preview">
+            <!-- <img src="../../../assets/png/code.png" alt="img" /> -->
+        </div>
+        <div class="video-side-panel__item-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2" />
+            </svg>
+        </div>
+        <div class="video-side-panel__item-data-wrapper">
+            <div class="video-side-panel__item-title">{{el.title}}</div>
+            <div class="video-side-panel__item-lector">{{el.lector}}</div>
+      </div>
+    </div>
+  </div>
+</div>
