@@ -1,7 +1,15 @@
-<div class="main">
-  <app-header></app-header>
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
-  <app-footer></app-footer>
+<div
+  class="page-layout"
+  *ngIf="isAuth0Loading$ | async; else auth0Loaded"
+>
+  <app-page-loader></app-page-loader>
 </div>
+<ng-template #auth0Loaded>
+  <div class="main">
+    <app-header></app-header>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</ng-template>
