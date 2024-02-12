@@ -2,6 +2,10 @@ import { ComponentFixture, TestBed} from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 import { By } from '@angular/platform-browser';
+import { LoginButtonComponent } from '../buttons/login-button.component';
+import { LogoutButtonComponent } from '../buttons/logout-button.component';
+import { SignupButtonComponent } from '../buttons/signup-button.component';
+import { AuthService } from '@auth0/auth0-angular';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -11,7 +15,15 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderComponent]
+      declarations: [
+        HeaderComponent,
+        LoginButtonComponent,
+        LogoutButtonComponent,
+        SignupButtonComponent
+      ],
+      providers: [
+        {provide: AuthService, useValue: {}}
+      ]
     });
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;

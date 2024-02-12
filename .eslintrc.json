@@ -27,6 +27,7 @@
             "style": "kebab-case"
           }
         ]
+        // "@typescript-eslint/no-var-requires": "off"
       }
     },
     {

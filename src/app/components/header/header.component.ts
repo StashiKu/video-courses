@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, EventEmitter, HostListener, Inject, Output, Renderer2 } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-header',
@@ -13,12 +14,14 @@ export class HeaderComponent {
     dark: 'dark'
   };
   mode = 'light';
+  isAuthenticated$ = this.authService.isAuthenticated$;
 
   @Output() readonly toggle: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private authService: AuthService
   ) {}
 
   @HostListener('window:scroll', ['$event']) onscroll() {

@@ -53,12 +53,20 @@
             </div>
         </div>
         <!-- login icon -->
-        <div class="login" tabindex="0">
+        <!-- <div class="login" tabindex="0">
             <span class="material-icons">perm_identity</span>
-        </div>
+        </div> -->
+        <ng-template #unAuthenticated>
+            <app-signup-button></app-signup-button>
+            <app-login-button></app-login-button>
+        </ng-template>
+
         <!-- logout icon -->
-        <div class="logoff" tabindex="0">
+        <ng-container *ngIf="isAuthenticated$ | async; else unAuthenticated">
+            <app-logout-button></app-logout-button>
+        </ng-container>
+        <!-- <div class="logoff" tabindex="0">
             <span class="material-icons">logout</span>
-        </div>
+        </div> -->
     </div>
 </header>
