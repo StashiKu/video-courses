@@ -1,0 +1,16 @@
+<app-page-layout>
+    <div class="category container">
+        <div class="category__player-wrapper">
+            <h1 class="category__title">{{category.title}}</h1>
+            <app-video-player></app-video-player>
+            <button
+                class="btn btn-outline-primary btn--go-back"
+                type="button"
+                (click)="goBack()"
+            >Go Back</button>
+        </div>
+        <div class="category__side-panel">
+            <app-video-side-panel [categoryKey]="category.key"></app-video-side-panel>
+        </div>
+    </div>
+</app-page-layout>

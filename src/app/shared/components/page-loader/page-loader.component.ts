@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-page-loader',
+  styleUrls: ['./page-loader.scss'],
   template: `
     <div class="loader">
       <img [src]="loadingImg" alt="Loading..." />

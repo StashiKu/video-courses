@@ -64,6 +64,7 @@
         <!-- logout icon -->
         <ng-container *ngIf="isAuthenticated$ | async; else unAuthenticated">
             <app-logout-button></app-logout-button>
+            <app-profile-button></app-profile-button>
         </ng-container>
         <!-- <div class="logoff" tabindex="0">
             <span class="material-icons">logout</span>

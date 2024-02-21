@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, mapToResolve } from '@angular/router';
-import { CategoriesComponent } from './components/categories/categories.component';
-import { CategoryComponent } from './components/category/category.component';
 import { ResolveGuard } from './guards/resolve-guard.service';
 import { AuthGuard } from '@auth0/auth0-angular';
 
@@ -9,11 +7,13 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: CategoriesComponent,
+    loadChildren: () =>
+      import('./features/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'main',
-    component: CategoriesComponent,
+    loadChildren: () =>
+      import('./features/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'categories/:categoryKey',
@@ -21,13 +21,15 @@ export const routes: Routes = [
     resolve: {
       category: mapToResolve(ResolveGuard)
     },
-    component: CategoryComponent
+    loadChildren: () =>
+      import('./features/category/category.module').then((m) => m.CategoryModule),
   },
-  // {
-  //   path: 'profile',
-  //   // canActivate: [AuthGuard]
-  //   // TODO: add profile component
-  // }
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./features/profile/profile.module').then((m) => m.ProfileModule),
+    canActivate: [AuthGuard]
+  }
   // TODO: add NotFound page
   // {
   //   path: '**',

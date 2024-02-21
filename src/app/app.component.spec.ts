@@ -1,24 +1,14 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { AuthService } from '@auth0/auth0-angular';
-import { SignupButtonComponent } from './components/buttons/signup-button.component';
-import { LoginButtonComponent } from './components/buttons/login-button.component';
-import { LogoutButtonComponent } from './components/buttons/logout-button.component';
 import { TestBed } from '@angular/core/testing';
+i
+import { SharedModule } from './shared/shared.module';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [
-      AppComponent,
-      HeaderComponent,
-      SignupButtonComponent,
-      LoginButtonComponent,
-      LogoutButtonComponent,
-      FooterComponent
-    ],
+    imports: [RouterTestingModule,  SharedModule],
+    declarations: [AppComponent],
     providers: [
       { provide: AuthService, useValue: {}}
     ]

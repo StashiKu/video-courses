@@ -26,3 +26,9 @@ body {
     transition: all 1s ease 0s;
     background-color: styles.$greyLight-1;
 }
+
+app-page-loader {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}

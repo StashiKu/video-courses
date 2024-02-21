@@ -21,7 +21,7 @@ export class LoginButtonComponent {
   handleLogin(): void {
     this.auth.loginWithRedirect({
       appState: {
-        target: '/profile'
+        target: '/main'
       },
       authorizationParams: {
         prompt: 'login'

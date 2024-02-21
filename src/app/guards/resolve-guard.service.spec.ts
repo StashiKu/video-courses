@@ -5,7 +5,7 @@ import { CategoriesService } from '../services/categories.service';
 import { RouterTestingHarness, RouterTestingModule } from '@angular/router/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, mapToResolve, provideRouter } from '@angular/router';
-import { CategoryComponent } from '../components/category/category.component';
+import { CategoryComponent } from '../features/category/category.component';
 import { of } from 'rxjs';
 import { categoriesMock } from '../testing/data/categories.mock';
 import { Category } from '../types/category';

@@ -1,4 +1,6 @@
-export const categoriesMock = [
+import { Category } from "src/app/types/category";
+
+export const categoriesMock: Category[] = [
   {
     title: 'FrontEnd',
     key: 'front-end',
