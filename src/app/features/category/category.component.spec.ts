@@ -6,9 +6,11 @@ import { Category } from 'src/app/types/category';
 import { categoriesMock } from 'src/app/testing/data/categories.mock';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-import { VideoPlayerComponent } from '../video-player/video-player.component';
-import { VideoSidePanelComponent } from '../video-side-panel/video-side-panel.component';
+import { VideoPlayerComponent } from '../../components/video-player/video-player.component';
+import { VideoSidePanelComponent } from '../../components/video-side-panel/video-side-panel.component';
 import { VideosService } from 'src/app/services/videos.service';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { AuthService } from '@auth0/auth0-angular';
 
 describe('CategoryComponent', () => {
   let component: CategoryComponent;
@@ -25,11 +27,12 @@ describe('CategoryComponent', () => {
     };
 
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, SharedModule],
       declarations: [CategoryComponent, VideoPlayerComponent, VideoSidePanelComponent],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
-        { provide: VideosService, useValue: videoServiceSpy }
+        { provide: VideosService, useValue: videoServiceSpy },
+        { provide: AuthService, useValue: {} }
       ]
     }).compileComponents();
   });

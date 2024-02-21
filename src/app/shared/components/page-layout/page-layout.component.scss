@@ -1,0 +1,9 @@
+.page-layout {
+    display: flex;
+	flex-flow: column nowrap;
+	min-height: 100vh;
+}
+
+.page-layout__content {
+    flex: 1;
+}

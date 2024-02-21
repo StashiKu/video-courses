@@ -2,10 +2,10 @@ import { ComponentFixture, TestBed} from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 import { By } from '@angular/platform-browser';
+import { AuthService } from '@auth0/auth0-angular';
 import { LoginButtonComponent } from '../buttons/login-button.component';
 import { LogoutButtonComponent } from '../buttons/logout-button.component';
 import { SignupButtonComponent } from '../buttons/signup-button.component';
-import { AuthService } from '@auth0/auth0-angular';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -22,7 +22,7 @@ describe('HeaderComponent', () => {
         SignupButtonComponent
       ],
       providers: [
-        {provide: AuthService, useValue: {}}
+        { provide: AuthService, useValue: {} }
       ]
     });
     fixture = TestBed.createComponent(HeaderComponent);

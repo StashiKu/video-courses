@@ -8,7 +8,6 @@ dotenv.config();
 const writeFilePromisified = promisify(writeFile);
 
 const targetPath = './src/environments/environment.ts';
-console.log(process.env["AUTH0_DOMAIN"], '<<<<<<<<<<')
 
 const envConfigFile = `export const environment = {
   production: false,
