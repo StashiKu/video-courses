@@ -1,0 +1,74 @@
+@use 'src/assets/styles/_colors' as colors;
+
+.profile__title {
+    margin-bottom: 20px;
+}
+
+.profile__header {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.profile__headline {
+    margin-left: 20px;
+}
+
+.profile__subscribtions {
+    margin-bottom: 30px;
+}
+
+.profile__subscribtions-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__subscribtions-list__item {
+    width: 250px;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 1rem;
+    box-shadow: 0.3rem 0.3rem 0.6rem colors.$greyLight-2,
+        -0.2rem -0.2rem 0.5rem colors.$white
+}
+
+.profile-payment-methods-list__item {
+    width: 250px;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 1rem;
+    box-shadow: 0.3rem 0.3rem 0.6rem colors.$greyLight-2,
+        -0.2rem -0.2rem 0.5rem colors.$white
+
+}
+
+.profile-payment-methods-list__item-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-payment-methods-list__item-remove-icon > svg {
+    fill: colors.$greyDark2;
+    cursor: pointer;
+}
+
+.profile-payment-methods-list {
+    display: flex;
+    align-items: center;
+}
+
+.profile-payment-methods-list__item-add-card {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.profile-payment-methods-list__item-add-card svg {
+    fill: colors.$greyDark2;
+    cursor: pointer;
+}

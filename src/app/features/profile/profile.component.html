@@ -1,31 +1,85 @@
-<div class="content-layout">
-  <h1 id="page-title" class="content__title">Profile Page</h1>
-  <div class="content__body">
-    <p id="page-description">
-      <span>
-        You can use the <strong>ID Token</strong> to get the profile information
-        of an authenticated user.
-      </span>
-      <span>
-        <strong>Only authenticated users can access this page.</strong>
-      </span>
-    </p>
-
-    <ng-container *ngIf="user$ | async as user">
-      <div class="profile-grid">
-        <div class="profile__header">
-          <img [src]="user.picture" alt="Profile" class="profile__avatar" />
-          <div class="profile__headline">
-            <h2 class="profile__title">{{ user.name }}</h2>
-            <span class="profile__description">{{ user.email }}</span>
+<app-page-layout>
+  <div class="profile container">
+    <h1 id="page-title" class="profile__title">Profile Page</h1>
+    <div class="profile__body">
+      <ng-container *ngIf="user$ | async as user">
+        <div class="profile-grid">
+          <div class="profile__header">
+            <img [src]="user.picture" alt="Profile" class="profile__avatar" />
+            <div class="profile__headline">
+              <h2 class="profile__title">{{ user.name }}</h2>
+              <span class="profile__description">{{ user.email }}</span>
+            </div>
+          </div>
+          <div class="profile__content">
+            <section class="profile__subscribtions">
+              <hr>
+              <h3 class="profile__subscribtions-title">Subscribtions</h3>
+              <div class="profile__subscribtions-list">
+                <div class="profile__subscribtions-list__item">
+                  <span class="profile__subscribtions-list__item-title">Front-End</span>
+                  <!-- write directive to change color of status -->
+                  <span class="profile__subscribtions-list__item-status">active</span>
+                  <span class="profile__subscribtions-list__item-valid">Valid through: 20.03.2024</span>
+                </div>
+              </div>
+            </section>
+            <section class="profile__payment-methods">
+              <hr>
+              <h3 class="profile-payment-methods-title">Payment Methods</h3>
+              <div class="profile-payment-methods-list">
+                <div class="profile-payment-methods-list__item">
+                  <div class="profile-payment-methods-list__item-header">
+                    <div class="profile-payment-methods-list__item-ps__icon">
+                      <svg
+                        width="60"
+                        height="30"
+                        viewBox="0 0 400 120"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <linearGradient id="a" x1="370" x2="290" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#1F5CD7"/>
+                          <stop stop-color="#02AEFF" offset="1"/>
+                        </linearGradient>
+                        <path d="m31 13h33c3 0 12-1 16 13 3 9 7 23 13 44h2c6-22 11-37 13-44 4-14 14-13 18-13h31v96h-32v-57h-2l-17 57h-24l-17-57h-3v57h-31m139-96h32v57h3l21-47c4-9 13-10 13-10h30v96h-32v-57h-2l-21 47c-4 9-14 10-14 10h-30m142-29v29h-30v-50h98c-4 12-18 21-34 21" fill="#0f754e"/>
+                        <path d="m382 53c4-18-8-40-34-40h-68c2 21 20 40 39 40" fill="url(#a)"/>
+                      </svg>
+                    </div>
+                    <div class="profile-payment-methods-list__item-remove-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="25px"
+                        width="25px"
+                        viewBox="0 0 24 24"
+                        fill="#000000">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="profile-payment-methods-list__item-footer">
+                    0000
+                  </div>
+                </div>
+                <div class="profile-payment-methods-list__item-add-card">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                    enable-background="new 0 0 24 24"
+                    height="45px"
+                    width="45px"
+                    viewBox="0 0 24 24"
+                    fill="#000000">
+                    <g>
+                      <rect fill="none" height="24" width="24"/>
+                    </g>
+                    <g>
+                      <path d="M20,4H4C2.89,4,2.01,4.89,2.01,6L2,18c0,1.11,0.89,2,2,2h10v-2H4v-6h18V6C22,4.89,21.11,4,20,4z M20,8H4V6h16V8z M24,17v2 h-3v3h-2v-3h-3v-2h3v-3h2v3H24z"/>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
-        <ng-container *ngIf="code$ | async as code">
-          <div class="profile__details">
-            {{ code }}
-          </div>
-        </ng-container>
-      </div>
-    </ng-container>
+      </ng-container>
+    </div>
   </div>
-</div>
+</app-page-layout>
