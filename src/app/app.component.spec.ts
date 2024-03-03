@@ -2,7 +2,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { AuthService } from '@auth0/auth0-angular';
 import { TestBed } from '@angular/core/testing';
-i
 import { SharedModule } from './shared/shared.module';
 
 describe('AppComponent', () => {
