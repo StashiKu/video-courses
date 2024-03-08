@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProfileComponent } from 'src/app/features/profile/profile.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AddPaymentModalComponent } from 'src/app/modals/add-payment-modal/add-payment-modal.component';
 
 
 
@@ -10,6 +11,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [ProfileComponent],
   imports: [
     SharedModule,
+    AddPaymentModalComponent,
     CommonModule,
     RouterModule.forChild([
       {

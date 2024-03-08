@@ -1,0 +1,29 @@
+@use 'src/assets/styles/_colors' as colors;
+
+.add-payment__add-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    margin-left: 10px;
+    border-radius: 1rem;
+    border: 1px solid colors.$lightPink;
+    box-shadow: 0.3rem 0.3rem 0.6rem colors.$greyLight-2,
+        -0.2rem -0.2rem 0.5rem colors.$white;
+}
+
+.add-payment__add-card-icon svg {
+    fill: colors.$greyDark-2;
+    cursor: pointer;
+}
+
+.card-form_date-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+::placeholder {
+    color: colors.$greyLight-2;
+}
