@@ -112,6 +112,16 @@
       "id": "864258fe-4efb-11ee-be56-0242ac120002"
     }
   ],
+  "payment-methods": [
+    {
+      "cardNumber": "000000000000",
+      "month": "12",
+      "year": "24",
+      "cvv": "123",
+      "email": "kurushinstas@gmail.com",
+      "id": 1
+    }
+  ],
   "videos": [
     {
       "categoryKey": "front-end",

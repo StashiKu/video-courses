@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
-import { map } from 'rxjs';
+import { AuthService, User } from '@auth0/auth0-angular';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +10,7 @@ import { map } from 'rxjs';
 export class ProfileComponent {
   title = 'Decoded ID Token';
 
-  user$ = this.authService.user$;
+  user$: Observable<User|null|undefined> = this.authService.user$;
   code$ = this.user$.pipe(map((user) => JSON.stringify(user, null, 2)));
 
   constructor(private authService: AuthService) {}

@@ -9,3 +9,8 @@ export const VideosApi = new InjectionToken<string>('VideosApi', {
     providedIn: 'any',
     factory: () => 'http://localhost:6060/videos'
 })
+
+export const PaymentMethodsApi = new InjectionToken<string>('PaymentMethodsApi', {
+    providedIn: 'any',
+    factory: () => 'http://localhost:6060/payment-methods'
+})

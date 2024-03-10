@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, TemplateRef, inject } from '@angular/core';
+import { Component, OnInit, TemplateRef, inject } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -7,8 +7,11 @@ import {
   ReactiveFormsModule,
   Validators
 } from '@angular/forms';
+import { AuthService, User } from '@auth0/auth0-angular';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PaymentService } from 'src/app/services/payment.service';
 import { cardExpireDateValidator } from 'src/app/shared/validators/sync-validators/card-expire-date-validator';
+import { IPaymentMethod } from 'src/app/types/payment-method';
 
 @Component({
   selector: 'app-add-payment-modal',
@@ -17,12 +20,26 @@ import { cardExpireDateValidator } from 'src/app/shared/validators/sync-validato
   templateUrl: './add-payment-modal.component.html',
   styleUrls: ['./add-payment-modal.component.scss']
 })
-export class AddPaymentModalComponent {
+export class AddPaymentModalComponent implements OnInit {
   private modalService = inject(NgbModal);
-  public cardForm: FormGroup;
+  public cardForm!: FormGroup;
+  private user: User|null|undefined;
 
-  constructor(private fb: FormBuilder) {
-    this.cardForm = new FormGroup({
+  constructor(
+    private fb: FormBuilder,
+    private paymentService: PaymentService,
+    private authService: AuthService) {
+    this.cardForm = this.initForm();
+  }
+
+  ngOnInit(): void {
+    this.authService.user$.subscribe(
+      user => this.user = user
+    );
+  }
+
+  private initForm(): FormGroup {
+    return new FormGroup({
       cardNumber: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[0-9]+(?!.)/)
@@ -35,7 +52,7 @@ export class AddPaymentModalComponent {
         Validators.required,
         Validators.pattern(/^[0-9]+(?!.)/)
       ]),
-      cv: new FormControl('', [
+      cvv: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[0-9]+(?!.)/)
       ])
@@ -59,24 +76,24 @@ export class AddPaymentModalComponent {
     }
   }
 
-  public onSubmit(modal: NgbActiveModal): void {
-    if (this.cardForm.valid) {
-      modal.close();
-    } else {
-      this.setFormInvalid();
+  public addPaymentMethod(): void {
+    const data: IPaymentMethod = {
+      ...this.cardForm.value,
+      email: this.user?.email,
     }
+    this.paymentService.addPaymentMethod(data).subscribe(
+      () => {
+        this.modalService.dismissAll();
+      }
+    );
+
   }
 
-  setFormInvalid() {
-    Object.keys(this.cardForm.controls).filter(controlName => {
-      const control = this.cardForm.get(controlName);
-
-      return control?.invalid
-    }).forEach(controlName => {
-      const control = this.cardForm.get(controlName);
-      control?.markAsTouched();
-      control?.setErrors({ 'required': true });
-    });
+  public onSubmit(modal: NgbActiveModal): void {
+    if (this.cardForm.valid) {
+      this.addPaymentMethod();
+      modal.close();
+    }
   }
 
   get cardNumber() {
@@ -91,7 +108,7 @@ export class AddPaymentModalComponent {
     return this.cardForm.get('year');
   }
 
-  get cv() {
-    return this.cardForm.get('cv');
+  get cvv() {
+    return this.cardForm.get('cvv');
   }
 }
