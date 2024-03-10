@@ -16,7 +16,12 @@ import { ProfilePaymentComponent } from './components/profile-payment/profile-pa
 import { ProfileSubscriptionsComponent } from './components/profile-subscriptions/profile-subscriptions.component';
 
 @NgModule({
-  declarations: [AppComponent, ProfileNavComponent, ProfilePaymentComponent, ProfileSubscriptionsComponent],
+  declarations: [
+    AppComponent,
+    ProfileNavComponent,
+    ProfilePaymentComponent,
+    ProfileSubscriptionsComponent
+  ],
   imports: [
     BrowserModule,
     CommonModule,

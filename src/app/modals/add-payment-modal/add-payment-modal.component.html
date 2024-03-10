@@ -1,0 +1,139 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Fill in Card Data</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="cardForm" (ngSubmit)="onSubmit(modal)">
+      <div class="mb-3">
+        <!-- card number form input -->
+        <div class="input-group mb-3">
+          <div class="col-12">
+            <input
+              class="form-control"
+              placeholder="0000 0000 0000"
+              formControlName="cardNumber"
+              name="cardNumber"
+              type="text"
+              maxlength="12"
+              
+            />
+            <div *ngIf="cardNumber?.invalid && (cardNumber?.dirty || cardNumber?.touched)"
+                  class="alert alert-danger"
+            >
+              <div *ngIf="cardNumber?.errors?.['required']">Card Number is required.</div>
+            </div>
+          </div>
+        </div>
+        <!-- month form input -->
+        <div class="input-group">
+          <div class="col-5 me-auto">
+            <div class="row">
+              <div class="col-4 pe-0">
+                <input
+                  class="form-control"
+                  name="month"
+                  placeholder="00"
+                  formControlName="month"
+                  type="text"
+                  maxlength="2"
+                />
+              </div>
+              <div class="col-1 px-0 card-form_date-divider">/</div>
+              <!-- year form input -->
+              <div class="col-4 ps-0">
+                <input
+                  class="form-control"
+                  name="year"
+                  placeholder="00"
+                  formControlName="year"
+                  type="text"
+                />
+              </div>
+
+              <div class="col-9">
+                <div *ngIf="month?.invalid && (month?.dirty || month?.touched)"
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="month?.errors?.['required']">Month and year are required.</div>
+                  <div *ngIf="month?.errors?.['pattern']">
+                    Month value should be in range of 1-12.
+                  </div>
+                </div>
+                <div
+                  *ngIf="cardForm.errors?.['validExpireDate'] &&
+                    (cardForm.touched || cardForm.dirty)"
+                  class="alert alert-danger"
+                >
+                  Month and Year should be equal or greater than current.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <input
+              class="form-control"
+              name="cv"
+              placeholder="000"
+              formControlName="cv"
+              type="text"
+              minlength="3"
+              maxlength="3"
+            />
+            <div *ngIf="cv?.invalid && (cv?.dirty || cv?.touched)"
+                  class="alert alert-danger"
+            >
+              <div *ngIf="cv?.errors?.['required']">CV number is required.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="submit"
+          class="btn btn-outline-dark"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- <div class="modal-footer">
+    <button
+      type="submit"
+      class="btn btn-outline-dark"
+    >
+      Save
+    </button>
+  </div> -->
+</ng-template>
+
+<div
+  class="add-payment__add-card-icon"
+  (click)="open(content)"
+  (keyup)="onKeyUp($event, content)"
+  tabindex="0"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    enable-background="new 0 0 24 24"
+    height="45px"
+    width="45px"
+    viewBox="0 0 24 24"
+    fill="#000000"
+  >
+    <g>
+      <rect fill="none" height="24" width="24" />
+    </g>
+    <g>
+      <path
+        d="M20,4H4C2.89,4,2.01,4.89,2.01,6L2,18c0,1.11,0.89,2,2,2h10v-2H4v-6h18V6C22,4.89,21.11,4,20,4z M20,8H4V6h16V8z M24,17v2 h-3v3h-2v-3h-3v-2h3v-3h2v3H24z"
+      />
+    </g>
+  </svg>
+</div>
