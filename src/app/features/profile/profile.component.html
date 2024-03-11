@@ -11,7 +11,7 @@
               <span class="profile__description">{{ user.email }}</span>
             </div>
           </div>
-          <div class="profile__content">
+          <div class="profile__content" *ngIf="code$ | async as code">
             <section class="profile__subscribtions">
               <hr>
               <h3 class="profile__subscribtions-title">Subscribtions</h3>

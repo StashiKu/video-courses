@@ -25,8 +25,8 @@ export class TsInterceptor implements HttpInterceptor {
       console.log('req.method:', req.method);
       cloneRequest = req.clone({
         headers: new HttpHeaders({
-          'Content-Type': 'application/jaon',
-          Authorization: 'user-token',
+          'Content-Type': 'application/json',
+          // Authorization: 'user-token',
         }),
       });
 

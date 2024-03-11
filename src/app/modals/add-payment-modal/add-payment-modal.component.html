@@ -9,7 +9,7 @@
     ></button>
   </div>
   <div class="modal-body">
-    <form [formGroup]="cardForm" (ngSubmit)="onSubmit(modal)">
+    <form [formGroup]="cardForm" #ngForm="ngForm" (ngSubmit)="onSubmit(modal)">
       <div class="mb-3">
         <!-- card number form input -->
         <div class="input-group mb-3">
@@ -23,10 +23,16 @@
               maxlength="12"
               
             />
-            <div *ngIf="cardNumber?.invalid && (cardNumber?.dirty || cardNumber?.touched)"
+            <div *ngIf="cardNumber?.invalid && 
+              (cardNumber?.dirty || cardNumber?.touched || (cardNumber?.pristine && ngForm.submitted))"
                   class="alert alert-danger"
             >
-              <div *ngIf="cardNumber?.errors?.['required']">Card Number is required.</div>
+              <div *ngIf="cardNumber?.errors?.['required']">
+                Card Number is required.
+              </div>
+              <div *ngIf="cardNumber?.errors?.['pattern']">
+                Card Number should contain only digits 0-9.
+              </div>
             </div>
           </div>
         </div>
@@ -57,7 +63,8 @@
               </div>
 
               <div class="col-9">
-                <div *ngIf="month?.invalid && (month?.dirty || month?.touched)"
+                <div *ngIf="month?.invalid && 
+                  (month?.dirty || month?.touched || (cardNumber?.pristine && ngForm.submitted))"
                   class="alert alert-danger"
                 >
                   <div *ngIf="month?.errors?.['required']">Month and year are required.</div>
@@ -78,17 +85,19 @@
           <div class="col-3">
             <input
               class="form-control"
-              name="cv"
+              name="cvv"
               placeholder="000"
-              formControlName="cv"
+              formControlName="cvv"
               type="text"
-              minlength="3"
               maxlength="3"
-            />
-            <div *ngIf="cv?.invalid && (cv?.dirty || cv?.touched)"
+              minLength="3"
+              />
+            <div *ngIf="cvv?.invalid && 
+              (cvv?.dirty || cvv?.touched || (cardNumber?.pristine && ngForm.submitted))"
                   class="alert alert-danger"
             >
-              <div *ngIf="cv?.errors?.['required']">CV number is required.</div>
+              <div *ngIf="cvv?.errors?.['required']">CVV number is required.</div>
+              <div *ngIf="cvv?.errors?.['pattern']">CVV should be a number</div>
             </div>
           </div>
         </div>
@@ -96,21 +105,13 @@
       <div class="modal-footer">
         <button
           type="submit"
-          class="btn btn-outline-dark"
+          class="btn btn-outline-primary"
         >
-          Save
+          Add card
         </button>
       </div>
     </form>
   </div>
-  <!-- <div class="modal-footer">
-    <button
-      type="submit"
-      class="btn btn-outline-dark"
-    >
-      Save
-    </button>
-  </div> -->
 </ng-template>
 
 <div
