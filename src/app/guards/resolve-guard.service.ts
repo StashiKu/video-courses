@@ -3,6 +3,7 @@ import { CategoriesService } from '../services/categories.service';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { EMPTY, Observable, catchError, of, switchMap, take } from 'rxjs';
 import { Category } from '../types/category';
+import { AuthGuard } from '@auth0/auth0-angular';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,6 @@ export class ResolveGuard {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<Category> {
-
       if (!route.paramMap.has('categoryKey')) {
         this.router.navigate(['/main']);
   
@@ -41,4 +41,15 @@ export class ResolveGuard {
           })
         )
     }
+}
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthGuard2 extends AuthGuard {
+  resolve() {
+    console.log('in auth guard');
+    return true
+  }
 }
