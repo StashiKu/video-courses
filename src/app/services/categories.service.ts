@@ -15,8 +15,7 @@ export class CategoriesService {
   ) {}
 
   public getCategories(): Observable<Category[]> {
-    return this.https
-      .get<Category[]>(this.categoriesUrl)
+    return this.https.get<Category[]>(this.categoriesUrl)
       .pipe(
         retry(3),
         share(),
@@ -25,8 +24,7 @@ export class CategoriesService {
   }
 
   public getCategory(keyName: string): Observable<Category | null> {
-    return this.https
-      .get<Category[]>(this.categoriesUrl)
+    return this.https.get<Category[]>(this.categoriesUrl)
       .pipe(
         retry(3),
         map<Category[], Category | null>(

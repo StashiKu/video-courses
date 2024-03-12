@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, TemplateRef, inject } from '@angular/core';
 import {
-  FormBuilder,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -26,9 +25,9 @@ export class AddPaymentModalComponent implements OnInit {
   private user: User|null|undefined;
 
   constructor(
-    private fb: FormBuilder,
     private paymentService: PaymentService,
-    private authService: AuthService) {
+    private authService: AuthService
+  ) {
     this.cardForm = this.initForm();
   }
 

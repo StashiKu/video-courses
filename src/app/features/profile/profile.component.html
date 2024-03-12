@@ -11,7 +11,7 @@
               <span class="profile__description">{{ user.email }}</span>
             </div>
           </div>
-          <div class="profile__content" *ngIf="code$ | async as code">
+          <div class="profile__content">
             <section class="profile__subscribtions">
               <hr>
               <h3 class="profile__subscribtions-title">Subscribtions</h3>
@@ -27,8 +27,10 @@
             <section class="profile__payment-methods">
               <hr>
               <h3 class="profile-payment-methods-title">Payment Methods</h3>
-              <div class="profile-payment-methods-list">
-                <div class="profile-payment-methods-list__item">
+              <div class="profile-payment-methods-list"
+                *ngIf="paymentMethods && paymentMethods.length">
+                <div class="profile-payment-methods-list__item"
+                  *ngFor="let pm of paymentMethods">
                   <div class="profile-payment-methods-list__item-header">
                     <div class="profile-payment-methods-list__item-ps__icon">
                       <svg
@@ -57,7 +59,7 @@
                     </div>
                   </div>
                   <div class="profile-payment-methods-list__item-footer">
-                    0000
+                    {{pm.cardNumber}}
                   </div>
                 </div>
                 <app-add-payment-modal></app-add-payment-modal>
