@@ -1,6 +1,15 @@
 svg {
     width: 30px;
     height: 30px;
-    fill: white;
+    fill: #3bff96;
     cursor: pointer;
+}
+
+a {
+    position: relative;
+}
+
+a:hover,
+a:focus {
+    top: .125rem
 }
