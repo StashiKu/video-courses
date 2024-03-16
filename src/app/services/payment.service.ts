@@ -12,9 +12,7 @@ export class PaymentService {
   constructor(
     private https: HttpClient,
     @Inject(PaymentMethodsApi) private paymentMethodsUrl: string
-  ) {
-    console.log('hi from service§');
-  }
+  ) {}
 
   public addPaymentMethod(payment: IPaymentMethod): Observable<IPaymentMethod> {
     return this.https.post<IPaymentMethod>(this.paymentMethodsUrl, payment)

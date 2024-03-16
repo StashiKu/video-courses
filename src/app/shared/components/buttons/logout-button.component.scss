@@ -4,3 +4,12 @@ svg {
     fill: white;
     cursor: pointer;
 }
+
+a {
+    position: relative;
+}
+
+a:hover,
+a:focus {
+    top: .125rem
+}

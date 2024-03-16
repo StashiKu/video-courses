@@ -8,6 +8,7 @@ import { PageLayoutComponent } from './components/page-layout/page-layout.compon
 import { PageLoaderComponent } from './components/page-loader/page-loader.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     PageLayoutComponent,

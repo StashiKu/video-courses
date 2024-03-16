@@ -1,40 +1,47 @@
-<header (scroll)="onscroll()" [ngClass]="navbarfixed ? 'fixed' : 'nofixed'">
+<header>
+    <!-- [ngClass]="navbarfixed ? 'fixed' : 'nofixed'" -->
     <div class="logo">
         <div class="logo__img">
         <!-- inline svg -->
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-            >
-                <g clip-path="url(#clip0_79_2)">
-                <path
-                    d="M10 16.5L16 12L10 7.5V16.5ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
-                    fill="url(#paint0_linear_79_2)"
-                />
-                </g>
-                <defs>
-                <linearGradient
-                    id="paint0_linear_79_2"
-                    x1="12"
-                    y1="2"
-                    x2="12"
-                    y2="22"
-                    gradientUnits="userSpaceOnUse"
+            <a [routerLink]="['/main']">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                    focusable="false"
                 >
-                    <stop stop-color="#10A8A8" />
-                    <stop offset="1" stop-color="#88FFA2" />
-                </linearGradient>
-                <clipPath id="clip0_79_2">
-                    <rect width="24" height="24" fill="white" />
-                </clipPath>
-                </defs>
-            </svg>
+                    <g clip-path="url(#clip0_79_2)">
+                    <path
+                        d="M10 16.5L16 12L10 7.5V16.5ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                        fill="url(#paint0_linear_79_2)"
+                    />
+                    </g>
+                    <defs>
+                    <linearGradient
+                        id="paint0_linear_79_2"
+                        x1="12"
+                        y1="2"
+                        x2="12"
+                        y2="22"
+                        gradientUnits="userSpaceOnUse"
+                    >
+                        <stop stop-color="#10A8A8" />
+                        <stop offset="1" stop-color="#88FFA2" />
+                    </linearGradient>
+                    <clipPath id="clip0_79_2">
+                        <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                    </defs>
+                </svg>
+                <span class="logo__text">VIDEO COURSES</span>
+                <span class="sr-only">click to navigate to the home page</span>
+            </a>
             <!-- end of inline svg -->
         </div>
-        <div class="logo__text">VIDEO COURSES</div>
+        <!-- <div class="logo__text">VIDEO COURSES</div> -->
     </div>
    
     <div class="actions">
@@ -53,9 +60,6 @@
             </div>
         </div>
         <!-- login icon -->
-        <!-- <div class="login" tabindex="0">
-            <span class="material-icons">perm_identity</span>
-        </div> -->
         <ng-template #unAuthenticated>
             <app-signup-button></app-signup-button>
             <app-login-button></app-login-button>

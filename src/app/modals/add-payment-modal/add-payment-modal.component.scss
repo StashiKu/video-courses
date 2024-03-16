@@ -1,6 +1,7 @@
 @use 'src/assets/styles/_colors' as colors;
 
 .add-payment__add-card-icon {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,9 +9,18 @@
     height: 55px;
     margin-left: 10px;
     border-radius: 1rem;
-    border: 1px solid colors.$lightPink;
+    border: .125rem solid colors.$lightPink;
     box-shadow: 0.3rem 0.3rem 0.6rem colors.$greyLight-2,
         -0.2rem -0.2rem 0.5rem colors.$white;
+    transition: box-shadow .3s;
+
+    &:focus,
+    &:hover {
+        top: .125em;
+        box-shadow: -2px 1px 64px 1px colors.$lightPink;
+        -webkit-box-shadow: -2px 1px 64px 1px colors.$lightPink;
+        -moz-box-shadow: -2px 1px 64px 1px colors.$lightPink;
+    }
 }
 
 .add-payment__add-card-icon svg {

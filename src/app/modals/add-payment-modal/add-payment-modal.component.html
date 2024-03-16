@@ -114,13 +114,16 @@
   </div>
 </ng-template>
 
-<div
+<button
   class="add-payment__add-card-icon"
   (click)="open(content)"
   (keyup)="onKeyUp($event, content)"
   tabindex="0"
 >
   <svg
+    role="image"
+    aria-hidden="true"
+    focusable="false"
     xmlns="http://www.w3.org/2000/svg"
     enable-background="new 0 0 24 24"
     height="45px"
@@ -137,4 +140,5 @@
       />
     </g>
   </svg>
-</div>
+  <span class="sr-only">click to create new payment method</span>
+</button>
