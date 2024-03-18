@@ -5,7 +5,7 @@ import { ProfileButtonComponent } from './components/buttons/profile-button.comp
 import { LogoutButtonComponent } from './components/buttons/logout-button.component';
 import { SignupButtonComponent } from './components/buttons/signup-button.component';
 import { PageLayoutComponent } from './components/page-layout/page-layout.component';
-import { PageLoaderComponent } from './components/page-loader/page-loader.component';
+// import { PageLoaderComponent } from './components/page-loader/page-loader.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
     SignupButtonComponent,
     ProfileButtonComponent,
     PageLayoutComponent,
-    PageLoaderComponent,
+    // PageLoaderComponent,
     HeaderComponent,
     FooterComponent
   ],
@@ -27,7 +27,7 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     PageLayoutComponent,
-    PageLoaderComponent,
+    // PageLoaderComponent,
     HeaderComponent,
     FooterComponent
   ]

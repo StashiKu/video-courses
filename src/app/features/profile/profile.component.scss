@@ -13,6 +13,10 @@
     margin-left: 20px;
 }
 
+.profile__avatar {
+    border-radius: 1rem;
+}
+
 .profile__subscribtions {
     margin-bottom: 30px;
 }
@@ -22,12 +26,13 @@
     flex-direction: column;
 }
 
-.profile__subscribtions-list__item {
+.profile__card {
     width: 250px;
     height: 100px;
     margin: 10px;
     display: flex;
     flex-direction: column;
+    padding: 10px;
     padding: 10px;
     border-radius: 1rem;
     border: 1px solid colors.$greenFusion;
@@ -36,17 +41,11 @@
 }
 
 .profile-payment-methods-list__item {
-    width: 250px;
-    height: 100px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    padding: 10px;
-    border-radius: 1rem;
-    // border: 1px solid colors.$lightPink;
-    box-shadow: 0.3rem 0.3rem 0.6rem colors.$greyLight-2,
-        -0.2rem -0.2rem 0.5rem colors.$white
+    // padding: 10px;
+    // border-radius: 1rem;
+    // box-shadow: 0.3rem 0.3rem 0.6rem colors.$greyLight-2,
+    //     -0.2rem -0.2rem 0.5rem colors.$white
 
 }
 

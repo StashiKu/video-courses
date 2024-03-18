@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoriesService } from 'src/app/services/categories.service';
+import { ThemeService } from 'src/app/theme.service';
 import { Category } from 'src/app/types/category';
 
 @Component({
@@ -8,20 +9,15 @@ import { Category } from 'src/app/types/category';
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss'],
 })
-export class CategoriesComponent implements OnInit {
-  public categories!: Category[];
+export class CategoriesComponent {
+  public categories: Signal<Category[]> = this.categoriesService.categoriesS;
+  public isDarkTheme: Signal<boolean> = this.themeService.isDarkS;
 
   constructor(
     public categoriesService: CategoriesService,
+    private themeService: ThemeService,
     private router: Router
   ) {}
-
-  ngOnInit(): void {
-    this.categoriesService.getCategories()
-      .subscribe((categories) => {
-        this.categories = categories;
-      });
-  }
 
   public navigateToCategory(categoryKey: string): void {
     this.router.navigate([`/categories/${categoryKey}`]);

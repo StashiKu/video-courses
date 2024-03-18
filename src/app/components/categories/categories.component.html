@@ -1,12 +1,15 @@
 <div class="categories">
-  <div class="categories__list">
-    <div *ngFor="let cat of categories"
-      class="categories__item"
-      (click)="onClick(cat.key)"
-      (keyup)="onKeyup($event, cat.key)"
-      tabindex="0"
-    >
+  <div class="categories__list" *ngIf="categories().length; else message">
+    <div *ngFor="let cat of categories()"
+          class="categories__item"
+          (click)="onClick(cat.key)"
+          (keyup)="onKeyup($event, cat.key)"
+          tabindex="0"
+    > 
       <span class="categories__item-name">{{ cat.title }}</span>
     </div>
   </div>
+  <ng-template #message>
+    <span>No Categories</span>
+  </ng-template>
 </div>
