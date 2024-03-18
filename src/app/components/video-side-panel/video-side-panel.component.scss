@@ -2,14 +2,18 @@
 
 .video-side-panel {
     margin-top: 2rem;
-    background-color: colors.$greyLight-1;
+}
+
+.video-side-panel__item-preview__wrapper {
+    border: 2px solid magenta;
+    border-radius: 1rem;
+    margin-right: 1rem;
 }
 
 .video-side-panel__item-preview {
     width: 250px;
     height: 170px;
     border-radius: 1rem;
-    margin-right: 1rem;
     background-image: url('../../../assets/png/code.png');
     background-size: cover;
     filter: blur(2px);
@@ -24,7 +28,7 @@
 .video-side-panel__item-icon-block {
     position: absolute;
     top: 32%;
-    left: 21%;
+    left: 23%;
     color: #12ca4d;
 }
 

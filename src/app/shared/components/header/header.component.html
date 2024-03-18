@@ -50,7 +50,7 @@
             (click)="onToggleModeClick()"
             (keyup)="onToggleModeKeyup($event)"
             tabindex="0">
-            <div [ngClass]="{'is-flipped': mode === modes.dark}" class="modes">
+            <div [ngClass]="{'is-flipped': isDarkS()}" class="modes">
                 <div class="modes__icon modes__icon--light">
                     <span class="material-icons">light_mode</span>
                 </div>

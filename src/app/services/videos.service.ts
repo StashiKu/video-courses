@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable, catchError, map, retry, share } from 'rxjs';
 import { VideoCategory } from '../types/video';
@@ -9,19 +9,16 @@ import { VideosApi } from '../config/app.config';
   providedIn: 'root'
 })
 export class VideosService {
-
   constructor(
     private https: HttpClient,
     @Inject(VideosApi) private videosUrl: string
   ) {}
 
   public getVideosByCategory(categoryKey: string): Observable<VideoCategory> {
+    const options = { params: new HttpParams().set('categoryKey', categoryKey) };
+
     return this.https
-      .get<VideoCategory[]>(this.videosUrl, {
-        params: {
-          categoryKey
-        }
-      })
+      .get<VideoCategory[]>(this.videosUrl, options)
       .pipe(
         retry(3),
         map<VideoCategory[], VideoCategory>(

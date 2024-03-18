@@ -16,7 +16,7 @@
               <hr>
               <h3 class="profile__subscribtions-title">Subscribtions</h3>
               <div class="profile__subscribtions-list">
-                <div class="profile__subscribtions-list__item">
+                <div class="profile__subscribtions-list__item profile__card ">
                   <span class="profile__subscribtions-list__item-title">Front-End</span>
                   <!-- write directive to change color of status -->
                   <span class="profile__subscribtions-list__item-status">active</span>
@@ -29,7 +29,7 @@
               <h3 class="profile-payment-methods-title">Payment Methods</h3>
               <div class="profile-payment-methods-list"
                 *ngIf="paymentMethods && paymentMethods.length">
-                <div class="profile-payment-methods-list__item"
+                <div class="profile-payment-methods-list__item profile__card "
                   *ngFor="let pm of paymentMethods">
                   <div class="profile-payment-methods-list__item-header">
                     <div class="profile-payment-methods-list__item-ps__icon">

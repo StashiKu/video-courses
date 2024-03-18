@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, mapToResolve } from '@angular/router';
-import { AuthGuard2, ResolveGuard } from './guards/resolve-guard.service';
+import { ResolveGuard } from './guards/resolve-guard.service';
 import { AuthGuard } from '@auth0/auth0-angular';
 
 export const routes: Routes = [
@@ -27,10 +27,7 @@ export const routes: Routes = [
     path: 'profile',
     loadChildren: () =>
       import('./features/profile/profile.module').then((m) => m.ProfileModule),
-    canActivate: [AuthGuard],
-    resolve: {
-      test: mapToResolve(AuthGuard2)
-    }
+    canActivate: [AuthGuard]
   }
   // TODO: add NotFound page
   // {

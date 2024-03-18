@@ -10,17 +10,12 @@ import { httpInterceptorProviders } from './core/interceptors';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
-import { SharedModule } from './shared/shared.module';
-import { ProfileNavComponent } from './components/profile-nav/profile-nav.component';
-import { ProfilePaymentComponent } from './components/profile-payment/profile-payment.component';
-import { ProfileSubscriptionsComponent } from './components/profile-subscriptions/profile-subscriptions.component';
+import { PageLoaderComponent } from './shared/components/page-loader/page-loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileNavComponent,
-    ProfilePaymentComponent,
-    ProfileSubscriptionsComponent
+    PageLoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +24,6 @@ import { ProfileSubscriptionsComponent } from './components/profile-subscription
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule,
     AuthModule.forRoot({
       ...env.auth0,
     }),

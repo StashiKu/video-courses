@@ -26,7 +26,7 @@ export class LoginButtonComponent {
       authorizationParams: {
         prompt: 'login'
       },
-    });
+    })
   }
 
   onKeyUp(event: KeyboardEvent): void {

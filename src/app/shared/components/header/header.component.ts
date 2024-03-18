@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, Renderer2 } from '@angular/core';
+import { Component, Inject, Renderer2, Signal } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { ThemeService } from 'src/app/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -9,23 +10,18 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class HeaderComponent {
   navbarfixed = false;
-  modes = {
-    light: 'light',
-    dark: 'dark'
-  };
-  mode = 'light';
+  isDarkS: Signal<boolean> = this.themeService.isDarkS
   isAuthenticated$ = this.authService.isAuthenticated$;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
-    private authService: AuthService
+    private authService: AuthService,
+    private themeService: ThemeService
   ) {}
 
   switchTheme = () => {
-    this.mode = this.mode === 'light' ? this.modes.dark : this.modes.light;
-    const hostClass = this.mode === 'light' ? 'light-theme' : 'dark-theme';
-    this.renderer.setAttribute(this.document.body, 'class', hostClass);
+    this.themeService.toggleDarkTheme(this.renderer, this.document)
   }
 
   onToggleModeClick = () => {
