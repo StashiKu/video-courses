@@ -15,6 +15,10 @@ export class CategoriesService {
     @Inject(CategoriesApi) private categoriesUrl: string
   ) {}
 
+  public getCategories(): Observable<Category[]> {
+    return this.categories$;
+  }
+
   private categories$: Observable<Category[]> = 
     this.https.get<Category[]>(this.categoriesUrl).pipe(
       retry(3),

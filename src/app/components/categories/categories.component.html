@@ -1,6 +1,6 @@
 <div class="categories">
-  <div class="categories__list" *ngIf="categories().length; else message">
-    <div *ngFor="let cat of categories()"
+  <div class="categories__list" *ngIf="categoriesSignal().length; else message">
+    <div *ngFor="let cat of categoriesSignal()"
           class="categories__item"
           (click)="onClick(cat.key)"
           (keyup)="onKeyup($event, cat.key)"
