@@ -2719,6 +2719,69 @@
         "hash": "sha512-mM2yiGnt9o7KZLIFp8K1vjfmVfu7HR3d8dhH5SszfArbgn9DvvQ4P5D5TDGygzyBSzeyZe18p7I8rX8vgA6DKw=="
       }
     },
+    "npm:@ngrx/effects": {
+      "type": "npm",
+      "name": "npm:@ngrx/effects",
+      "data": {
+        "version": "16.3.0",
+        "packageName": "@ngrx/effects",
+        "hash": "sha512-QvN+jJFqBHH6x5eqtFVeMTcotoWMLTrDjK4wW61hmbYafGmBbEnIgikTsn2DSPA67io0DhgDtBHoBKnicy1gEw=="
+      }
+    },
+    "npm:@ngrx/entity": {
+      "type": "npm",
+      "name": "npm:@ngrx/entity",
+      "data": {
+        "version": "16.3.0",
+        "packageName": "@ngrx/entity",
+        "hash": "sha512-o+jhJylWPt9gspzkb61QqHgeBFssDKz4J/EoQcAE217Y1bEBWf6EuleHXiFvAoWKkNqb8eTHRnNGgT0VPE9G+A=="
+      }
+    },
+    "npm:@ngrx/eslint-plugin": {
+      "type": "npm",
+      "name": "npm:@ngrx/eslint-plugin",
+      "data": {
+        "version": "16.3.0",
+        "packageName": "@ngrx/eslint-plugin",
+        "hash": "sha512-AvzmqagmW6fcJQ/4K3c+0YrH78eJjLhAhWvo9qdpzek1723aFfXu3PJGqUiIvQSR+ocVSM3NODq3FMHwNC3dWQ=="
+      }
+    },
+    "npm:@ngrx/router-store": {
+      "type": "npm",
+      "name": "npm:@ngrx/router-store",
+      "data": {
+        "version": "16.3.0",
+        "packageName": "@ngrx/router-store",
+        "hash": "sha512-IrAx+9OkGMh9uEmhLrDke0adfXAIHHX6qYwUk02QUNND5dmvd1zg5YtB87XTxa2rWOpt9c9iyFHzemzSoa40uQ=="
+      }
+    },
+    "npm:@ngrx/schematics": {
+      "type": "npm",
+      "name": "npm:@ngrx/schematics",
+      "data": {
+        "version": "17.1.1",
+        "packageName": "@ngrx/schematics",
+        "hash": "sha512-DaBU97P+lCRWnphvYkE0qvZW16oCpn43/IA8XktFJa6hJP/JVlqk6cLR5fhfoLL2zdhpPkj9w5vsdqIlXZYXgw=="
+      }
+    },
+    "npm:@ngrx/store": {
+      "type": "npm",
+      "name": "npm:@ngrx/store",
+      "data": {
+        "version": "16.3.0",
+        "packageName": "@ngrx/store",
+        "hash": "sha512-aWQY41M7O0sMpTmM+OOPBPwKQWHhmkCStizFB1GdiGud8DU5fz0BdUiy6o2+feZypMzczqbwTnq+AxxxrWYqoA=="
+      }
+    },
+    "npm:@ngrx/store-devtools": {
+      "type": "npm",
+      "name": "npm:@ngrx/store-devtools",
+      "data": {
+        "version": "16.3.0",
+        "packageName": "@ngrx/store-devtools",
+        "hash": "sha512-Ou/aXxJmd9UgYliL09hmnlLdk35dJ8S56rJCHgeJlMPb8j0LDR7Olfpsa7Asi63Zvtg2MYZn1p1G0Tsb+0rk/Q=="
+      }
+    },
     "npm:@ngtools/webpack": {
       "type": "npm",
       "name": "npm:@ngtools/webpack",
@@ -3520,6 +3583,24 @@
         "hash": "sha512-flUksGIQCnJd6sZ1l5dqCEG/ksaoAg/eUwiLAGTJQcfgvZJKF++Ta4bJA6A5aPSJmsr+xlseHn4KLgVlNnvPTg=="
       }
     },
+    "npm:@types/yargs": {
+      "type": "npm",
+      "name": "npm:@types/yargs",
+      "data": {
+        "version": "17.0.32",
+        "packageName": "@types/yargs",
+        "hash": "sha512-xQ67Yc/laOG5uMfX/093MRlGGCIBzZMarVa+gfNKJxWAIgykYpVGkBdbqEzGDDfCrVUj6Hiff4mTZ5BA6TmAog=="
+      }
+    },
+    "npm:@types/yargs-parser": {
+      "type": "npm",
+      "name": "npm:@types/yargs-parser",
+      "data": {
+        "version": "21.0.3",
+        "packageName": "@types/yargs-parser",
+        "hash": "sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ=="
+      }
+    },
     "npm:@typescript-eslint/eslint-plugin": {
       "type": "npm",
       "name": "npm:@typescript-eslint/eslint-plugin",
@@ -3527,6 +3608,15 @@
         "version": "5.62.0",
         "packageName": "@typescript-eslint/eslint-plugin",
         "hash": "sha512-TiZzBSJja/LbhNPvk6yc0JrX9XqhQ0hdh6M2svYfsHGejaKFIAGd9MQ+ERIMzLGlN/kZoYIgdxFV0PuljTKXag=="
+      }
+    },
+    "npm:@typescript-eslint/experimental-utils": {
+      "type": "npm",
+      "name": "npm:@typescript-eslint/experimental-utils",
+      "data": {
+        "version": "5.62.0",
+        "packageName": "@typescript-eslint/experimental-utils",
+        "hash": "sha512-RTXpeB3eMkpoclG3ZHft6vG/Z30azNHuqY6wKPBHlVMZFuEvrtlEDe8gMqDb+SO+9hjC/pLekeSCryf9vMZlCw=="
       }
     },
     "npm:@typescript-eslint/parser": {
@@ -5858,6 +5948,15 @@
         "version": "8.56.0",
         "packageName": "eslint",
         "hash": "sha512-Go19xM6T9puCOWntie1/P997aXxFsOi37JIHRWI514Hc6ZnaHGKY9xFhrU65RT6CcBEzZoGG1e6Nq+DT04ZtZQ=="
+      }
+    },
+    "npm:eslint-etc": {
+      "type": "npm",
+      "name": "npm:eslint-etc",
+      "data": {
+        "version": "5.2.1",
+        "packageName": "eslint-etc",
+        "hash": "sha512-lFJBSiIURdqQKq9xJhvSJFyPA+VeTh5xvk24e8pxVL7bwLBtGF60C/KRkLTMrvCZ6DA3kbPuYhLWY0TZMlqTsg=="
       }
     },
     "npm:estraverse@4.3.0": {
@@ -9989,6 +10088,15 @@
         "version": "3.21.0",
         "packageName": "tsutils",
         "hash": "sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA=="
+      }
+    },
+    "npm:tsutils-etc": {
+      "type": "npm",
+      "name": "npm:tsutils-etc",
+      "data": {
+        "version": "1.4.2",
+        "packageName": "tsutils-etc",
+        "hash": "sha512-2Dn5SxTDOu6YWDNKcx1xu2YUy6PUeKrWZB/x2cQ8vY2+iz3JRembKn/iZ0JLT1ZudGNwQQvtFX9AwvRHbXuPUg=="
       }
     },
     "npm:tuf-js": {
@@ -16583,6 +16691,148 @@
         "type": "static"
       }
     ],
+    "npm:@ngrx/effects": [
+      {
+        "source": "npm:@ngrx/effects",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/effects",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/effects",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/effects",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:@ngrx/entity": [
+      {
+        "source": "npm:@ngrx/entity",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/entity",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/entity",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/entity",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:@ngrx/eslint-plugin": [
+      {
+        "source": "npm:@ngrx/eslint-plugin",
+        "target": "npm:eslint",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/eslint-plugin",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/eslint-plugin",
+        "target": "npm:@typescript-eslint/experimental-utils",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/eslint-plugin",
+        "target": "npm:eslint-etc",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/eslint-plugin",
+        "target": "npm:semver",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/eslint-plugin",
+        "target": "npm:strip-json-comments",
+        "type": "static"
+      }
+    ],
+    "npm:@ngrx/router-store": [
+      {
+        "source": "npm:@ngrx/router-store",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/router-store",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/router-store",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/router-store",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/router-store",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/router-store",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:@ngrx/store": [
+      {
+        "source": "npm:@ngrx/store",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/store",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/store",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:@ngrx/store-devtools": [
+      {
+        "source": "npm:@ngrx/store-devtools",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/store-devtools",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "npm:@ngrx/store-devtools",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
     "npm:@ngtools/webpack": [
       {
         "source": "npm:@ngtools/webpack",
@@ -17187,6 +17437,13 @@
         "type": "static"
       }
     ],
+    "npm:@types/yargs": [
+      {
+        "source": "npm:@types/yargs",
+        "target": "npm:@types/yargs-parser",
+        "type": "static"
+      }
+    ],
     "npm:@typescript-eslint/eslint-plugin": [
       {
         "source": "npm:@typescript-eslint/eslint-plugin",
@@ -17246,6 +17503,18 @@
       {
         "source": "npm:@typescript-eslint/eslint-plugin",
         "target": "npm:tsutils",
+        "type": "static"
+      }
+    ],
+    "npm:@typescript-eslint/experimental-utils": [
+      {
+        "source": "npm:@typescript-eslint/experimental-utils",
+        "target": "npm:eslint",
+        "type": "static"
+      },
+      {
+        "source": "npm:@typescript-eslint/experimental-utils",
+        "target": "npm:@typescript-eslint/utils",
         "type": "static"
       }
     ],
@@ -19506,6 +19775,33 @@
       {
         "source": "npm:eslint",
         "target": "npm:text-table",
+        "type": "static"
+      }
+    ],
+    "npm:eslint-etc": [
+      {
+        "source": "npm:eslint-etc",
+        "target": "npm:eslint",
+        "type": "static"
+      },
+      {
+        "source": "npm:eslint-etc",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "npm:eslint-etc",
+        "target": "npm:@typescript-eslint/experimental-utils",
+        "type": "static"
+      },
+      {
+        "source": "npm:eslint-etc",
+        "target": "npm:tsutils",
+        "type": "static"
+      },
+      {
+        "source": "npm:eslint-etc",
+        "target": "npm:tsutils-etc",
         "type": "static"
       }
     ],
@@ -24678,6 +24974,28 @@
       {
         "source": "npm:tsutils",
         "target": "npm:tslib@1.14.1",
+        "type": "static"
+      }
+    ],
+    "npm:tsutils-etc": [
+      {
+        "source": "npm:tsutils-etc",
+        "target": "npm:tsutils",
+        "type": "static"
+      },
+      {
+        "source": "npm:tsutils-etc",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "npm:tsutils-etc",
+        "target": "npm:@types/yargs",
+        "type": "static"
+      },
+      {
+        "source": "npm:tsutils-etc",
+        "target": "npm:yargs",
         "type": "static"
       }
     ],

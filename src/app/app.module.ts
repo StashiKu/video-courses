@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
 import { PageLoaderComponent } from './shared/components/page-loader/page-loader.component';
+import { RootStoreModule } from './core/@ngrx/root-store.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PageLoaderComponent } from './shared/components/page-loader/page-loader
     AuthModule.forRoot({
       ...env.auth0,
     }),
+    RootStoreModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],

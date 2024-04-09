@@ -11,6 +11,7 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        "@ngrx/good-action-hygiene": "error",
         "@angular-eslint/directive-selector": [
           "error",
           {
