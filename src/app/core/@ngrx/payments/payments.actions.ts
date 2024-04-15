@@ -4,8 +4,8 @@ import { IPaymentMethod } from 'src/app/types/payment-method';
 export const PaymentsActions = createActionGroup({
   source: 'Payments',
   events: {
-    'Load Payments': emptyProps(),
-    'Load Payments Success': props<{ paymentsMethods: ReadonlyArray<IPaymentMethod> }>(),
-    'Load Payments Failure': props<{ error: unknown }>(),
+    'Load Payment Methods': emptyProps(),
+    'Load Payment Methods Success': props<{ paymentMethods: ReadonlyArray<IPaymentMethod> }>(),
+    'Load Payment Methods Failure': props<{ error: unknown }>(),
   }
 });

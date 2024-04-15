@@ -1,13 +1,14 @@
-import { reducer, initialState } from './payments.reducer';
+import { reducer } from './payments.reducer';
+import { initialPaymentMethodsState } from './payments.state';
 
 describe('Payments Reducer', () => {
   describe('an unknown action', () => {
     it('should return the previous state', () => {
       const action = {} as any;
 
-      const result = reducer(initialState, action);
+      const result = reducer(initialPaymentMethodsState, action);
 
-      expect(result).toBe(initialState);
+      expect(result).toBe(initialPaymentMethodsState);
     });
   });
 });

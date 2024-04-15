@@ -8,6 +8,7 @@ import { metaReducers } from './meta-reducers';
 import { CustomSerializer, routerReducers } from './router';
 import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { CategoriesStoreModule } from './categories/categories-store.module';
+import { PaymentMethodsStoreModule } from './payments/payment-store.module.ts.module';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { CategoriesStoreModule } from './categories/categories-store.module';
       autoPause: true
     }) : [],
 
-    CategoriesStoreModule
+    CategoriesStoreModule,
+    PaymentMethodsStoreModule
   ]
 })
 export class RootStoreModule { }

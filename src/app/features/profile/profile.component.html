@@ -28,9 +28,9 @@
               <hr>
               <h3 class="profile-payment-methods-title">Payment Methods</h3>
               <div class="profile-payment-methods-list"
-                *ngIf="paymentMethods && paymentMethods.length">
+                *ngIf="paymentMethodsSignal() && paymentMethodsSignal().length">
                 <div class="profile-payment-methods-list__item profile__card "
-                  *ngFor="let pm of paymentMethods">
+                  *ngFor="let pm of paymentMethodsSignal()">
                   <div class="profile-payment-methods-list__item-header">
                     <div class="profile-payment-methods-list__item-ps__icon">
                       <svg

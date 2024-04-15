@@ -1,17 +1,14 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { PaymentsActions } from './payments.actions';
-import { initialPaymentsState } from './payments.state';
+import { initialPaymentMethodsState } from './payments.state';
 
-export const paymentsFeatureKey = 'payments';
+export const paymentMethodsFeatureKey = 'payments';
 
 export const reducer = createReducer(
-  initialPaymentsState,
-  on(PaymentsActions.loadPayments, state => ({
-    ...state,
-    loading: true,
-  })),
-  on(PaymentsActions.loadPaymentsSuccess, (state, { paymentsMethods }) => {
-    const data = [...paymentsMethods];
+  initialPaymentMethodsState,
+  on(PaymentsActions.loadPaymentMethodsSuccess, (state, { paymentMethods }) => {
+    const data = [...paymentMethods];
+
     return {
       ...state,
       data,
@@ -20,10 +17,5 @@ export const reducer = createReducer(
       error: null
     };
   }),
-  on(PaymentsActions.loadPaymentsFailure, (state, action) => state),
+  on(PaymentsActions.loadPaymentMethodsFailure, (state, action) => state),
 );
-
-export const paymentsFeature = createFeature({
-  name: paymentsFeatureKey,
-  reducer,
-});
