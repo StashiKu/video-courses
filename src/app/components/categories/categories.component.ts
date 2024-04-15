@@ -29,7 +29,6 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(CategoriesActions.loadCategories());
     this.categoriesData$ = this.store.select(selectCategoriesData);
-    this.categoriesState$ = this.store.select(selectCategoriesData);
   }
 
   public navigateToCategory(categoryKey: string): void {

@@ -11,8 +11,8 @@ import { PaymentsEffects } from './payments.effects';
   declarations: [],
   imports: [
     CommonModule,
-    StoreModule.forFeature(fromPayments.paymentsFeatureKey, fromPayments.reducer),
+    StoreModule.forFeature(fromPayments.paymentMethodsFeatureKey, fromPayments.reducer),
     EffectsModule.forFeature([PaymentsEffects])
   ]
 })
-export class PaymentStoreModuleTsModule { }
+export class PaymentMethodsStoreModule { }
