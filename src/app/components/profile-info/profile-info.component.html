@@ -1,0 +1,56 @@
+<section class="profile__subscribtions">
+    <hr>
+    <h3 class="profile__subscribtions-title">Subscribtions</h3>
+    <div class="profile__subscribtions-list">
+      <div class="profile__subscribtions-list__item profile__card ">
+        <span class="profile__subscribtions-list__item-title">Front-End</span>
+        <!-- write directive to change color of status -->
+        <span class="profile__subscribtions-list__item-status">active</span>
+        <span class="profile__subscribtions-list__item-valid">Valid through: 20.03.2024</span>
+      </div>
+    </div>
+  </section>
+  <section class="profile__payment-methods">
+    <hr>
+    <h3 class="profile-payment-methods-title">Payment Methods</h3>
+    <div class="profile-payment-methods-list"
+      *ngIf="paymentMethodsSignal() && paymentMethodsSignal().length">
+      <div class="profile-payment-methods-list__item profile__card "
+        *ngFor="let pm of paymentMethodsSignal()">
+        <div class="profile-payment-methods-list__item-header">
+          <div class="profile-payment-methods-list__item-ps__icon">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="60"
+              height="30"
+              viewBox="0 0 400 120"
+              xmlns="http://www.w3.org/2000/svg">
+              <linearGradient id="a" x1="370" x2="290" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1F5CD7"/>
+                <stop stop-color="#02AEFF" offset="1"/>
+              </linearGradient>
+              <path d="m31 13h33c3 0 12-1 16 13 3 9 7 23 13 44h2c6-22 11-37 13-44 4-14 14-13 18-13h31v96h-32v-57h-2l-17 57h-24l-17-57h-3v57h-31m139-96h32v57h3l21-47c4-9 13-10 13-10h30v96h-32v-57h-2l-21 47c-4 9-14 10-14 10h-30m142-29v29h-30v-50h98c-4 12-18 21-34 21" fill="#0f754e"/>
+              <path d="m382 53c4-18-8-40-34-40h-68c2 21 20 40 39 40" fill="url(#a)"/>
+            </svg>
+            <span class="sr-only">Payment method of the Mir payment system</span>
+          </div>
+          <div class="profile-payment-methods-list__item-remove-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="25px"
+              width="25px"
+              viewBox="0 0 24 24"
+              fill="#000000">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="profile-payment-methods-list__item-footer">
+          {{pm.cardNumber}}
+        </div>
+      </div>
+      <app-add-payment-modal></app-add-payment-modal>
+    </div>
+  </section>

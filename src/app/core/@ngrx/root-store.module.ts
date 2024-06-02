@@ -42,4 +42,4 @@ import { PaymentMethodsStoreModule } from './payments/payment-store.module.ts.mo
     PaymentMethodsStoreModule
   ]
 })
-export class RootStoreModule { }
+export class RootStoreModule {}
