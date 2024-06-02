@@ -5,9 +5,9 @@ import { Component } from '@angular/core';
   template: `
     <div class="page-layout">
       <app-header></app-header>
-      <div class="page-layout__content">
+      <main class="page-layout__content">
         <ng-content></ng-content>
-      </div>
+      </main>
       <app-footer></app-footer>
     </div>
   `,

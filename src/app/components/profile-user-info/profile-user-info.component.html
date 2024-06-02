@@ -1,0 +1,108 @@
+<form
+    [formGroup]="userDataForm"
+    #ngForm="ngForm"
+    (ngSubmit)="onSubmit()"
+>
+    
+    <div class="input-group">
+        <label class="control-label" for="firstName">First Name: </label>
+        <input
+            [ngClass]="{
+                'hasError': firstName.invalid && 
+                (firstName.dirty || firstName.touched || 
+                (firstName.pristine && ngForm.submitted))
+            }"
+            type="text"
+            class="form-control"
+            formControlName="firstName"
+            name="firstName"
+            id="firstName"
+        />
+        <div *ngIf="firstName?.invalid && 
+            (firstName?.dirty || firstName?.touched || (firstName?.pristine && ngForm.submitted))"
+            class="alert alert-danger"
+        >
+            <div *ngIf="firstName?.errors?.['required']">
+                First Name is required
+            </div>
+        </div>
+    </div>
+   
+    <div class="input-group">
+        <label for="lastName">Last Name: </label>
+        <input
+            type="text"
+            class="form-control"
+            formControlName="lastName"
+            name="lastName"
+        />
+        <div *ngIf="lastName?.invalid && 
+            (lastName?.dirty || lastName?.touched || (lastName?.pristine && ngForm.submitted))"
+            class="alert alert-danger"
+        >
+            <div *ngIf="lastName?.errors?.['required']">
+                Last Name is required
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="address">Address: </label>
+        <input
+            type="text"
+            class="form-control"
+            formControlName="address"
+            name="address"
+        />
+        <div *ngIf="address?.invalid && 
+            (address?.dirty || address?.touched || (address?.pristine && ngForm.submitted))"
+            class="alert alert-danger"
+        >
+            <div *ngIf="address?.errors?.['required']">
+                Address is required
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="education">Education: </label>
+        <input
+            placeholder="Enter Education Institution"
+            type="text"
+            class="form-control"
+            formControlName="education"
+            name="education"
+            [(ngModel)]="selected"
+            [ngbTypeahead]="search"
+            class="form-control"
+        />
+        <div *ngIf="education?.invalid && 
+            (education?.dirty || education?.touched || (education?.pristine && ngForm.submitted))"
+            class="alert alert-danger"
+        >
+            <div *ngIf="education?.errors?.['required']">
+                Education is required
+            </div>
+        </div>
+    </div>
+   
+    <div class="input-group"
+        *ngIf="education?.value"
+    >
+        <label for="faculty">Faculty: </label>
+        <input
+            type="text"
+            class="form-control"
+            formControlName="faculty"
+            name="faculty"
+        />
+        <div *ngIf="faculty?.invalid && 
+            (faculty?.dirty || faculty?.touched || (faculty?.pristine && ngForm.submitted))"
+            class="alert alert-danger"
+        >
+            <div *ngIf="faculty?.errors?.['required']">
+                Faculty is required
+            </div>
+        </div>
+    </div>
+
+    <button type="submit">click</button>
+</form>

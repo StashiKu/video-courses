@@ -4,10 +4,21 @@ header {
     justify-content: space-between;
     color: white;
     padding: 10px 20px;
-    position: fixed;
+    // position: fixed;
     width: 100%;
     box-sizing: border-box;
     z-index: 1;
+}
+
+[data-stuck] {
+    position: fixed;
+    top: 0;
+    transition: transform 0.3s;
+}
+  
+[data-stuck='false'] {
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.3s 0.5s;
 }
 
 .logo {
@@ -28,19 +39,6 @@ header {
 
 .actions > div {
     margin: 10px;
-}
-
-.fixed {
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    box-sizing: position border-box;
-    z-index: 1;
-}
-
-.nofixed {
-    position: static;
-    top: 0px;
 }
 
 nav > ul {

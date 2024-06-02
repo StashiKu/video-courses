@@ -9,6 +9,7 @@ import { PageLayoutComponent } from './components/page-layout/page-layout.compon
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { StickyDirective } from '../directives/sticky.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
     ProfileButtonComponent,
     PageLayoutComponent,
     // PageLoaderComponent,
+    StickyDirective,
     HeaderComponent,
     FooterComponent
   ],
@@ -28,6 +30,7 @@ import { RouterModule } from '@angular/router';
   exports: [
     PageLayoutComponent,
     // PageLoaderComponent,
+    StickyDirective,
     HeaderComponent,
     FooterComponent
   ]

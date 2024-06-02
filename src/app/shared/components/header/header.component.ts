@@ -17,11 +17,11 @@ export class HeaderComponent {
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
     private authService: AuthService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
   ) {}
 
   switchTheme = () => {
-    this.themeService.toggleDarkTheme(this.renderer, this.document)
+    this.themeService.toggleDarkTheme(this.renderer, this.document);
   }
 
   onToggleModeClick = () => {

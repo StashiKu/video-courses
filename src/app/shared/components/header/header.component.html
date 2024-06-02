@@ -1,5 +1,4 @@
-<header>
-    <!-- [ngClass]="navbarfixed ? 'fixed' : 'nofixed'" -->
+<header appSticky>
     <div class="logo">
         <div class="logo__img">
         <!-- inline svg -->
@@ -41,7 +40,6 @@
             </a>
             <!-- end of inline svg -->
         </div>
-        <!-- <div class="logo__text">VIDEO COURSES</div> -->
     </div>
    
     <div class="actions">
@@ -70,8 +68,5 @@
             <app-logout-button></app-logout-button>
             <app-profile-button></app-profile-button>
         </ng-container>
-        <!-- <div class="logoff" tabindex="0">
-            <span class="material-icons">logout</span>
-        </div> -->
     </div>
 </header>
